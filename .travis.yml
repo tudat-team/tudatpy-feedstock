@@ -15,6 +15,10 @@ matrix:
       os: osx
       osx_image: xcode9.4
 
+    - env: CONFIG=osx_python3.8 UPLOAD_PACKAGES=True PLATFORM=osx-64
+      os: osx
+      osx_image: xcode9.4
+
 script:
   - export CI=travis
   - export GIT_BRANCH="$TRAVIS_BRANCH"
