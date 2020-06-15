@@ -66,8 +66,8 @@ test:
     - pytest
   source_files:
     - tests/test_constants.py
-    - tests/test_interface_spice.py
-    - tests/test_tutorials.py
+#    - tests/test_interface_spice.py
+#    - tests/test_tutorials.py
   commands:
     - python -m pytest -v tests/
 
