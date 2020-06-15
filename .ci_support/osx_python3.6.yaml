@@ -5,9 +5,9 @@ c_compiler:
 c_compiler_version:
 - '9'
 channel_sources:
-- tudat-team,conda-forge,defaults
+- tudat-team, conda-forge, defaults
 channel_targets:
-- conda-forge main
+- tudat-team main
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
