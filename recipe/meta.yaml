@@ -41,7 +41,7 @@ requirements:
     - cspice-cmake
     - sofa-cmake
     - python
-    - eigen}
+    - eigen
 
   run:
     # Packages required to run the package. These are the dependencies
