@@ -69,7 +69,7 @@ test:
     - tests/test_interface_spice.py
     - tests/test_tutorials.py
   commands:
-    - python -m pytest tests/
+    - python -m pytest -v tests/
 
 about:
   home: http://tudat.tudelft.nl/
