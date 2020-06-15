@@ -9,5 +9,8 @@ channel_sources: tudat-team,conda-forge,defaults
 ignore_build_only_deps:
   - numpy
   - python
-
+clang:
+  - 8.0
+  - 9.0
+  - 10.0
 
