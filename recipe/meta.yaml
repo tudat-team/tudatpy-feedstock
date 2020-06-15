@@ -6,7 +6,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: dc10e328dcc22e6791bb97e82aec6fff353f4b12
+  git_rev: 9cf7ee35facb09b2c515151766d96a9f0aeb47ab
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -51,6 +51,25 @@ requirements:
     - {{ pin_compatible('pandas') }}
     - {{ pin_compatible('tudat') }}
     - python
+
+test:
+  imports:
+    - tudatpy
+    - tudatpy.elements
+    - tudatpy.kernel
+    - tudatpy.kernel.constants
+    - tudatpy.kernel.simulation_setup
+    - tudatpy.kernel.propagators
+    - tudatpy.kernel.spice_interface
+    - tudatpy.kernel.numerical_integrators
+  requires:
+    - pytest
+  source_files:
+    - tests/test_constants.py
+    - tests/test_interface_spice.py
+    - tests/test_tutorials.py
+  commands:
+    - pytest tests/
 
 about:
   home: http://tudat.tudelft.nl/
