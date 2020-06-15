@@ -1,1 +1,16 @@
-{}
+github:
+  user_or_org: tudat-team
+
+channels:
+  targets:
+  - [tudat-team, main]
+
+provider:
+  linux: circle
+  osx: travis
+  win: None
+  linux_ppc64le: None
+  linux_aarch64: None
+appveyor:
+  secure:
+    BINSTAR_TOKEN: vWktDJSW9Rh2frmNkzdUHF2n4WzalOoKudWGdBLo6jcC/suzU+fViO/3/TxLOnmW
