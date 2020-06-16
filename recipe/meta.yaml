@@ -48,6 +48,7 @@ requirements:
     # Package names should follow the package match specifications.
     - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('pandas') }}
+    - {{ pin_compatible('tabulate') }}
     - {{ pin_compatible('tudat') }}
     - python
 
@@ -65,8 +66,8 @@ test:
     - pytest
   source_files:
     - tests/test_constants.py
-#    - tests/test_interface_spice.py
-#    - tests/test_tutorials.py
+    - tests/test_interface_spice.py
+    - tests/test_tutorials.py
   commands:
     - python -m pytest -v tests/
 
