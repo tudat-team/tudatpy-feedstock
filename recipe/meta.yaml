@@ -68,8 +68,10 @@ test:
     - tests/test_constants.py
     - tests/test_interface_spice.py
     - tests/test_tutorials.py
- # commands:
- #   - python -m pytest -v tests/
+  commands:
+    - python -c "import tudatpy.io as io; print('TUDAT_DATA_PATH: ', io.get_tudat_data_path())"
+    - python -m pytest -v tests/*
+
 
 about:
   home: http://tudat.tudelft.nl/
