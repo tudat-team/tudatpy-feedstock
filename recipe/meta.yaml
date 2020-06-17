@@ -69,7 +69,7 @@ test:
     - tests/test_interface_spice.py
     - tests/test_tutorials.py
   commands:
-    - python -c "import tudatpy.io as io; print('TUDAT_DATA_PATH: ', io.get_tudat_data_path())"
+    - python -c "import tudatpy.io as io; print(io.get_tudat_data_path())"
     - python -m pytest -v tests/*
 
 
