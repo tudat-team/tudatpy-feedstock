@@ -70,7 +70,7 @@ test:
     - tests/test_tutorials.py
   commands:
     - python -c "import tudatpy.io as io; print(io.get_tudat_data_path())"
-    - python -m pytest -v tests/*
+    - python -m pytest -v tests/test_tutorials.py
 
 
 about:
