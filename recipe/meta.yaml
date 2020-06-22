@@ -72,7 +72,7 @@ test:
     - tests/test_tutorials.py
   commands:
     - python -c "from tudatpy.kernel import get_tudat_data_path; print(get_tudat_data_path())"
-    - python -c "from tudatpy.kernel import get_spice_kernel_path; print(get_spice_kernel_path())"
+    - python -c "from tudatpy.apps.satellite_propagator import single; single()"
 
     #- python -m pytest -v tests/test_tutorials.py
 
