@@ -66,10 +66,10 @@ test:
     - tudatpy.kernel.numerical_integrators
   requires:
     - pytest
-  #source_files:
-  #  - tests/test_constants.py
-  #  - tests/test_interface_spice.py
-  #  - tests/test_tutorials.py
+  source_files:
+    - tests/test_constants.py
+    - tests/test_interface_spice.py
+    - tests/test_tutorials.py
   commands:
     - python -c "from tudatpy.kernel import get_tudat_data_path; print(get_tudat_data_path())"
     - python -m pytest -v tests/test_tutorials.py
