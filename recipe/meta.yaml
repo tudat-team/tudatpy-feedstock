@@ -6,7 +6,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: 7b21b9825ba3e8f896e97941f7d4712c6f12154f
+  git_rev: dc9177cd716895e78b1d39e651daeb381afc3efe
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -70,7 +70,7 @@ test:
     - tests/test_constants.py
     #- tests/test_interface_spice.py
     #- tests/test_tutorials.py
-    - tests/test_paths.py
+    - tests/test_paths.pyn
   commands:
     - python -c "from tudatpy.kernel.paths import get_resource_path; print(get_resource_path())"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
