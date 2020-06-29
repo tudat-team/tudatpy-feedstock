@@ -2,11 +2,11 @@
 
 package:
   name: {{ name }}
-  version: 0.5.14
+  version: 0.5.15
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: 24ac979db18f547222fdfabafc6f1ace5e5f7d9b
+  git_rev: 7b21b9825ba3e8f896e97941f7d4712c6f12154f
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -82,7 +82,7 @@ about:
   home: http://tudat.tudelft.nl/
   license: BSD
   license_family: BSD
-  summary: A Python platform to perform astrodynamics and space research
+  summary: A Python platform to perform astrodynamics and space research.
 
 extra:
   recipe-maintainers:
