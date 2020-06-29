@@ -5,9 +5,9 @@ Home: http://tudat.tudelft.nl/
 
 Package license: BSD
 
-Feedstock license: BSD-3-Clause
+Feedstock license: BSD 3-Clause
 
-Summary: A Python platform to perform astrodynamics and space research
+Summary: A Python platform to perform astrodynamics and space research.
 
 
 
