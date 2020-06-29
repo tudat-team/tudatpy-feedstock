@@ -70,7 +70,7 @@ test:
     - tests/test_constants.py
     #- tests/test_interface_spice.py
     #- tests/test_tutorials.py
-    - tests/test_paths.pyn
+    - tests/test_paths.py
   commands:
     - python -c "from tudatpy.kernel.paths import get_resource_path; print(get_resource_path())"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
