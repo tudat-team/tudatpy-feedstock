@@ -2,11 +2,11 @@
 
 package:
   name: {{ name }}
-  version: 0.5.16
+  version: 0.5.17
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: 0.5.16
+  git_rev: 0.5.17
 
 build:
   # A non-negative integer representing the build number of the package.
