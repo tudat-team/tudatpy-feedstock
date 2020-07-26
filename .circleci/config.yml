@@ -23,6 +23,7 @@ jobs:
           # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
           command: |
             export CI=circle
+            export FEEDSTOCK_NAME=$(basename ${CIRCLE_PROJECT_REPONAME})
             ./.scripts/run_docker_build.sh
   build_linux_python3.7:
     working_directory: ~/test
@@ -42,6 +43,7 @@ jobs:
           # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
           command: |
             export CI=circle
+            export FEEDSTOCK_NAME=$(basename ${CIRCLE_PROJECT_REPONAME})
             ./.scripts/run_docker_build.sh
   build_linux_python3.8:
     working_directory: ~/test
@@ -61,6 +63,7 @@ jobs:
           # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
           command: |
             export CI=circle
+            export FEEDSTOCK_NAME=$(basename ${CIRCLE_PROJECT_REPONAME})
             ./.scripts/run_docker_build.sh
 
 workflows:
