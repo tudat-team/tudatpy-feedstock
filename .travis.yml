@@ -7,17 +7,20 @@ language: generic
 
 matrix:
   include:
-    - env: CONFIG=osx_python3.6 UPLOAD_PACKAGES=True PLATFORM=osx-64
+    - env: CONFIG=osx_64_python3.6 UPLOAD_PACKAGES=True PLATFORM=osx-64
       os: osx
       osx_image: xcode9.4
+      arch: amd64
 
-    - env: CONFIG=osx_python3.7 UPLOAD_PACKAGES=True PLATFORM=osx-64
+    - env: CONFIG=osx_64_python3.7 UPLOAD_PACKAGES=True PLATFORM=osx-64
       os: osx
       osx_image: xcode9.4
+      arch: amd64
 
-    - env: CONFIG=osx_python3.8 UPLOAD_PACKAGES=True PLATFORM=osx-64
+    - env: CONFIG=osx_64_python3.8 UPLOAD_PACKAGES=True PLATFORM=osx-64
       os: osx
       osx_image: xcode9.4
+      arch: amd64
 
 script:
   - export CI=travis
