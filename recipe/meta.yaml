@@ -31,7 +31,8 @@ requirements:
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('c') }}              # [not win]
     - pybind11                         # [win]
-    - vs2017_{{ target_platform  }}    # [win]
+    - {{ compiler('m2w64_c') }}         # [win]
+    - m2w64-toolchain                   # [win]
     - cmake
 
   host:
