@@ -5,8 +5,8 @@ package:
   version: 0.5.17
 
 source:
-  git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: 0.5.17
+  - git_url: https://github.com/tudat-team/tudatpy.git
+    git_rev: 0.5.17
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -30,6 +30,7 @@ requirements:
     # or native when not cross-compiling), and any source pre-processors.
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('c') }}              # [not win]
+    - pybind11                         # [win]
     - vs2017_{{ target_platform  }}    # [win]
     - cmake
 
