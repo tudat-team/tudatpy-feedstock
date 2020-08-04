@@ -12,7 +12,7 @@ cmake ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     ..
 if errorlevel 1 exit 1
-cmake --build . --config RelWithDebInfo --target install
+cmake --build . --config RelWithDebInfo --target install -- -j4
 if errorlevel 1 exit 1
 ctest
 if errorlevel 1 exit 1
