@@ -60,11 +60,29 @@ test:
     - tudatpy
     - tudatpy.elements
     - tudatpy.kernel
+    - tudatpy.kernel.math
+    - tudatpy.kernel.math.interpolators
+    - tudatpy.kernel.math.numerical_integrators
+    - tudatpy.kernel.math.root_finders
+    - tudatpy.kernel.interface
+    - tudatpy.kernel.interface.spice_interface
+    - tudatpy.kernel.astro
+    - tudatpy.kernel.astro.aerodynamics
+    - tudatpy.kernel.astro.conversion
+    - tudatpy.kernel.astro.ephemerides
+    - tudatpy.kernel.astro.fundamentals
+    - tudatpy.kernel.astro.gravitation
+    - tudatpy.kernel.astro.propagators
+    - tudatpy.kernel.astro.frames
+    - tudatpy.kernel.astro.two_body_dynamics
     - tudatpy.kernel.constants
-    - tudatpy.kernel.simulation_setup
-    - tudatpy.kernel.propagators
-    - tudatpy.kernel.spice_interface
-    - tudatpy.kernel.numerical_integrators
+    - tudatpy.kernel.io
+    - tudatpy.kernel.simulation
+    - tudatpy.kernel.simulation.environment_setup
+    - tudatpy.kernel.simulation.propagation_setup
+    - tudatpy.kernel.simulation.estimation_setup
+    - tudatpy.kernel.example
+
   requires:
     - pytest
   source_files:
