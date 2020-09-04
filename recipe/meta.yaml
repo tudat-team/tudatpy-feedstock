@@ -94,7 +94,7 @@ test:
     - python -c "from tudatpy.kernel.io import get_resource_path; print(get_resource_path())"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
     - python -m pytest -v tests/test_constants.py
-    - python -m pytest -v tests/test_paths.py
+    - python -m pytest -v tests/test_io.py
 
 
 about:
