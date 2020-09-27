@@ -30,6 +30,7 @@ requirements:
     # or native when not cross-compiling), and any source pre-processors.
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('c') }}              # [not win]
+    - {{ compiler('clang') }}          # [win]
     - pybind11                         # [win]
     - cmake
 
