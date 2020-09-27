@@ -13,7 +13,7 @@ cmake ^
     -DCMAKE_BUILD_TYPE=Release ^
     ..
 if errorlevel 1 exit 1
-cmake --build . --config Release --target install
+cmake --build . --verbose --config Release --target install -- VERBOSE=1
 if errorlevel 1 exit 1
 ctest --verbose
 if errorlevel 1 exit 1
