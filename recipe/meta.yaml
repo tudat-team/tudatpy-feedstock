@@ -31,7 +31,7 @@ requirements:
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('clang') }}          # [win]
-    - pybind11                         # [win]
+#    - pybind11                         # [win]
     - cmake
 
   host:

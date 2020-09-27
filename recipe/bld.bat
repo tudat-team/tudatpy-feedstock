@@ -1,8 +1,22 @@
-
 mkdir build
-if errorlevel 1 exit 1
 cd build
-if errorlevel 1 exit 1
+SET TUDATPY_BUILD_DIR=%cd%
+
+git clone https://github.com/pybind/pybind11.git
+cd pybind11
+git checkout 4f72ef846fe8453596230ac285eeaa0ce3278bb4
+mkdir build
+cd build
+cmake ^
+    -G "Ninja" ^
+    -DPYBIND11_TEST=NO ^
+    -DCMAKE_INSTALL_PREFIX=%TUDATPY_BUILD_DIR% ^
+    -DCMAKE_PREFIX_PATH=%TUDATPY_BUILD_DIR% ^
+    -DCMAKE_BUILD_TYPE=Release ^
+    ..
+cmake --build . --target install
+cd ../..
+
 cmake ^
     -G "NMake Makefiles" ^
     -DCMAKE_CXX_STANDARD=14 ^
@@ -11,6 +25,7 @@ cmake ^
     -D_ENABLE_EXTENDED_ALIGNED_STORAGE=on ^
     -DBoost_NO_BOOST_CMAKE=ON ^
     -DCMAKE_BUILD_TYPE=Release ^
+    -Dpybind11_DIR=%TUDATPY_BUILD_DIR%\share\cmake\pybind11\ ^
     ..
 if errorlevel 1 exit 1
 cmake --build . --verbose --config Release --target install -- VERBOSE=1
