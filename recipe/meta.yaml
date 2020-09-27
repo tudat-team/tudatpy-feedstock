@@ -7,7 +7,7 @@ package:
 
 source:
   - git_url: https://github.com/tudat-team/tudatpy.git
-    git_rev: f88d754b312e1ce886aca515ddaa47692fbe3535
+    git_rev: fd5278a1d43b296fe06cf80f66be0dca4578e7cf
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -31,7 +31,6 @@ requirements:
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('clang') }}          # [win]
-#    - pybind11                         # [win]
     - cmake
 
   host:
@@ -87,9 +86,10 @@ test:
     - pytest
   source_files:
     - tests/test_constants.py
-    #- tests/test_interface_spice.py
-    #- tests/test_tutorials.py
+    - tests/test_interface_spice.py
+    - tests/test_tutorials.py
     - tests/test_io.py
+
   commands:
     - python -c "from tudatpy.kernel.io import get_resource_path; print(get_resource_path())"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"

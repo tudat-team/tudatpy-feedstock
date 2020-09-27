@@ -4,7 +4,7 @@ SET TUDATPY_BUILD_DIR=%cd%
 
 git clone https://github.com/pybind/pybind11.git
 cd pybind11
-git checkout 4f72ef846fe8453596230ac285eeaa0ce3278bb4
+git checkout d159a563383d10c821ba7b2a71905d1207db6de4
 mkdir build
 cd build
 cmake ^
