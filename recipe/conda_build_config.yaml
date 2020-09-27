@@ -7,8 +7,7 @@ numpy:
 channel_targets:
   - tudat-team main
 channel_sources:
-  - msys2, tudat-team, conda-forge, defaults    # [win]
-  - tudat-team, conda-forge, defaults           # [not win]
+  - tudat-team, conda-forge, defaults
 ignore_build_only_deps:
   - numpy
   - python

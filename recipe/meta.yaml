@@ -7,7 +7,7 @@ package:
 
 source:
   - git_url: https://github.com/tudat-team/tudatpy.git
-    git_rev:  c80da3b992011840fe354ff72f8148ca84ef48ab
+    git_rev: c80da3b992011840fe354ff72f8148ca84ef48ab
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -31,8 +31,6 @@ requirements:
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('c') }}              # [not win]
     - pybind11                         # [win]
-    - {{ compiler('m2w64_c') }}         # [win]
-    - m2w64-toolchain                   # [win]
     - cmake
 
   host:
