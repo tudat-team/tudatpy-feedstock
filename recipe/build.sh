@@ -25,7 +25,7 @@ cmake \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_CXX_STANDARD=14 \
     -DTUDATPY_CONDA_BUILD=on \
-    -D_GLIBCXX_USE_CXX11_ABI=0 \
+    -D_GLIBCXX_USE_CXX11_ABI=1 \
     -Dpybind11_DIR="$TUDATPY_BUILD_DIR/share/cmake/pybind11/" \
     ..
 
