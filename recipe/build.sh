@@ -23,8 +23,9 @@ cmake \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DCMAKE_PREFIX_PATH=$PREFIX \
-    -DCMAKE_CXX_STANDARD=17 \
+    -DCMAKE_CXX_STANDARD=14 \
     -DTUDATPY_CONDA_BUILD=on \
+    -D_GLIBCXX_USE_CXX11_ABI=1 \
     -Dpybind11_DIR="$TUDATPY_BUILD_DIR/share/cmake/pybind11/" \
     ..
 

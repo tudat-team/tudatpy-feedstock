@@ -6,11 +6,19 @@ channels:
   - [tudat-team, main]
 
 provider:
-  linux: circle
-  osx: travis
-  win: appveyor
+  linux: azure
+  osx: azure
+  win: azure
   linux_ppc64le: None
   linux_aarch64: None
+
 appveyor:
   secure:
     BINSTAR_TOKEN: vWktDJSW9Rh2frmNkzdUHF2n4WzalOoKudWGdBLo6jcC/suzU+fViO/3/TxLOnmW
+
+azure:
+  # flag for forcing the building all supported providers
+  force: True
+  # toggle for storing the conda build_artifacts directory (including the
+  # built packages) as an Azure pipeline artifact that can be downloaded
+  store_build_artifacts: True

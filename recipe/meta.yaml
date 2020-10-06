@@ -1,12 +1,13 @@
 {% set name = "tudatpy" %}
+  {% set verion = "0.5.18" %}
 
 package:
   name: {{ name }}
-  version: 0.5.18
+  version: {{ verion }}
 
 source:
-  git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: 96a4932f69ed38b0c705c87335781b9715c1c331
+  - git_url: https://github.com/tudat-team/tudatpy.git
+    git_rev: fd5278a1d43b296fe06cf80f66be0dca4578e7cf
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -15,8 +16,7 @@ build:
   #  and versions to determine the latest one. This is important because
   #  new builds that contain bug fixes for the way a package is built may be
   #  added to a repository.
-#  number: 3  # [not win]
-#  number: 4  # [win]
+  number: 105
   run_exports:
     - {{ pin_compatible('cspice-cmake', max_pin='x.x') }}
     - {{ pin_compatible('tudat-resources', max_pin='x.x') }}
@@ -30,8 +30,7 @@ requirements:
     # or native when not cross-compiling), and any source pre-processors.
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('c') }}              # [not win]
-    - pybind11                         # [win]
-    - vs2017_{{ target_platform  }}    # [win]
+    - {{ compiler('clang') }}          # [win]
     - cmake
 
   host:
@@ -60,23 +59,42 @@ test:
     - tudatpy
     - tudatpy.elements
     - tudatpy.kernel
+    - tudatpy.kernel.math
+    - tudatpy.kernel.math.interpolators
+    - tudatpy.kernel.math.numerical_integrators
+    - tudatpy.kernel.math.root_finders
+    - tudatpy.kernel.interface
+    - tudatpy.kernel.interface.spice_interface
+    - tudatpy.kernel.astro
+    - tudatpy.kernel.astro.aerodynamics
+    - tudatpy.kernel.astro.conversion
+    - tudatpy.kernel.astro.ephemerides
+    - tudatpy.kernel.astro.fundamentals
+    - tudatpy.kernel.astro.gravitation
+    - tudatpy.kernel.astro.propagators
+    - tudatpy.kernel.astro.frames
+    - tudatpy.kernel.astro.two_body_dynamics
     - tudatpy.kernel.constants
-    - tudatpy.kernel.simulation_setup
-    - tudatpy.kernel.propagators
-    - tudatpy.kernel.spice_interface
-    - tudatpy.kernel.numerical_integrators
+    - tudatpy.kernel.io
+    - tudatpy.kernel.simulation
+    - tudatpy.kernel.simulation.environment_setup
+    - tudatpy.kernel.simulation.propagation_setup
+    - tudatpy.kernel.simulation.estimation_setup
+    - tudatpy.kernel.example
+
   requires:
     - pytest
   source_files:
     - tests/test_constants.py
-    #- tests/test_interface_spice.py
-    #- tests/test_tutorials.py
-    - tests/test_paths.py
+    - tests/test_interface_spice.py
+    - tests/test_tutorials.py
+    - tests/test_io.py
+
   commands:
-    - python -c "from tudatpy.kernel.paths import get_resource_path; print(get_resource_path())"
+    - python -c "from tudatpy.kernel.io import get_resource_path; print(get_resource_path())"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
     - python -m pytest -v tests/test_constants.py
-    - python -m pytest -v tests/test_paths.py
+    - python -m pytest -v tests/test_io.py
 
 
 about:
