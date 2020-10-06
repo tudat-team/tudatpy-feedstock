@@ -4,7 +4,7 @@ if errorlevel 1 exit 1
 cd build
 if errorlevel 1 exit 1
 cmake ^
-    -G "MinGW Makefiles" ^
+    -G "Visual Studio 15 2017 Win64" ^
     -DCMAKE_CXX_STANDARD=11 ^
     -D_hypot=hypot ^
     -DBoost_NO_BOOST_CMAKE=ON ^
