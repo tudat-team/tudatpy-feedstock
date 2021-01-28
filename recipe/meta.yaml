@@ -7,7 +7,7 @@ package:
 
 source:
   - git_url: https://github.com/tudat-team/tudatpy.git
-    git_rev: 078d66595cf8585bc9682667107cfab64c33c9b2
+    git_rev: 96588e2e7ec1e95c9619940695821c1edb57b5dd
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -16,7 +16,7 @@ build:
   #  and versions to determine the latest one. This is important because
   #  new builds that contain bug fixes for the way a package is built may be
   #  added to a repository.
-  number: 20
+  number: 21
   run_exports:
     - {{ pin_compatible('cspice-cmake', max_pin='x.x') }}
     - {{ pin_compatible('tudat-resources', max_pin='x.x') }}
