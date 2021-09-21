@@ -64,7 +64,7 @@ test:
     - tudatpy.kernel.math.numerical_integrators
     - tudatpy.kernel.math.root_finders
     - tudatpy.kernel.interface
-    - tudatpy.kernel.interface.spice_interface
+    - tudatpy.kernel.interface.spice
     - tudatpy.kernel.astro
     - tudatpy.kernel.astro.aerodynamics
     - tudatpy.kernel.astro.conversion
