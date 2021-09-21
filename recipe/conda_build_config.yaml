@@ -4,8 +4,6 @@ python:
   - 3.8
 numpy:
   - 1.14
-eigen:
-  - 3.3.7
 channel_targets:
   - tudat-team main
 channel_sources:
