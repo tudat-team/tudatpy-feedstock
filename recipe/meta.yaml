@@ -43,6 +43,7 @@ requirements:
     - sofa-cmake
     - python
     - eigen
+    - pybind11
 
   run:
     # Packages required to run the package. These are the dependencies
@@ -52,6 +53,7 @@ requirements:
     - {{ pin_compatible('pandas') }}
     - {{ pin_compatible('tabulate') }}
     - {{ pin_compatible('tudat') }}
+    - {{ pin_compatible('pybind11') }}
     - python
 
 test:
