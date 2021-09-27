@@ -20,6 +20,7 @@ build:
   run_exports:
     - {{ pin_compatible('cspice-cmake', max_pin='x.x') }}
     - {{ pin_compatible('tudat-resources', max_pin='x.x') }}
+    - {{ pin_compatible('nrlmsise-00', max_pin='x.x') }}
     - {{ pin_compatible('sofa-cmake', max_pin='x.x') }}
 
 requirements:
@@ -48,6 +49,7 @@ requirements:
     - tudat
     - tudat-resources
     - cspice-cmake
+    - nrlmsise-00
     - sofa-cmake
     - python
     - eigen
@@ -89,6 +91,7 @@ test:
     - tudatpy.kernel.io
     - tudatpy.kernel.simulation
     - tudatpy.kernel.simulation.environment_setup
+    - tudatpy.kernel.simulation.environment_setup.atmosphere.nrlmsise00
     - tudatpy.kernel.simulation.propagation_setup
     - tudatpy.kernel.simulation.estimation_setup
     - tudatpy.kernel.example
