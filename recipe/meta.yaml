@@ -16,7 +16,7 @@ build:
   #  and versions to determine the latest one. This is important because
   #  new builds that contain bug fixes for the way a package is built may be
   #  added to a repository.
-  number: 71
+  number: 72
   run_exports:
     - {{ pin_compatible('cspice-cmake', max_pin='x.x') }}
     - {{ pin_compatible('tudat-resources', max_pin='x.x') }}
@@ -91,7 +91,7 @@ test:
     - tudatpy.kernel.io
     - tudatpy.kernel.simulation
     - tudatpy.kernel.simulation.environment_setup
-    - tudatpy.kernel.simulation.environment_setup.atmosphere.nrlmsise00
+    - tudatpy.kernel.simulation.environment_setup.atmosphere
     - tudatpy.kernel.simulation.propagation_setup
     - tudatpy.kernel.simulation.estimation_setup
     - tudatpy.kernel.example
