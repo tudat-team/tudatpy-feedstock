@@ -69,7 +69,6 @@ requirements:
 test:
   imports:
     - tudatpy
-    - tudatpy.elements
     - tudatpy.kernel
     - tudatpy.kernel.math
     - tudatpy.kernel.math.interpolators
