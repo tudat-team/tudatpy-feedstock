@@ -7,7 +7,7 @@ package:
 
 source:
   - git_url: https://github.com/tudat-team/tudatpy.git
-    git_rev: 909ea4cea3436cded2b46b96a89f3ebbfb7bba03
+    git_rev: 91d421b832db3cf254feca9d4b2e2400dcb9d1b0
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -78,20 +78,14 @@ test:
     - tudatpy.kernel.interface
     - tudatpy.kernel.interface.spice
     - tudatpy.kernel.astro
-    - tudatpy.kernel.astro.aerodynamics
-    - tudatpy.kernel.astro.conversion
-    - tudatpy.kernel.astro.ephemerides
-    - tudatpy.kernel.astro.fundamentals
+    - tudatpy.kernel.astro.frame_conversion
+    - tudatpy.kernel.astro.element_conversion
     - tudatpy.kernel.astro.gravitation
-    - tudatpy.kernel.astro.propagators
-    - tudatpy.kernel.astro.frames
-    - tudatpy.kernel.astro.shape
     - tudatpy.kernel.astro.two_body_dynamics
     - tudatpy.kernel.constants
     - tudatpy.kernel.io
     - tudatpy.kernel.simulation
     - tudatpy.kernel.simulation.environment_setup
-    - tudatpy.kernel.simulation.environment_setup.atmosphere
     - tudatpy.kernel.simulation.propagation_setup
     - tudatpy.kernel.simulation.estimation_setup
     - tudatpy.kernel.example
