@@ -1,13 +1,13 @@
 {% set name = "tudatpy" %}
-  {% set verion = "0.5.22" %}
+  {% set version = "0.6.0" %}
 
 package:
   name: {{ name }}
-  version: {{ verion }}
+  version: {{ version }}
 
 source:
   - git_url: https://github.com/tudat-team/tudatpy.git
-    git_rev: e7ddc031b76a78a4599ca802bb364dd7d177603a
+    git_rev: 8ef0189ef25ad9294381c70a73ed6ee248fc64e0
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -16,10 +16,11 @@ build:
   #  and versions to determine the latest one. This is important because
   #  new builds that contain bug fixes for the way a package is built may be
   #  added to a repository.
-  number: 69
+  number: 0
   run_exports:
     - {{ pin_compatible('cspice-cmake', max_pin='x.x') }}
     - {{ pin_compatible('tudat-resources', max_pin='x.x') }}
+    - {{ pin_compatible('nrlmsise-00', max_pin='x.x') }}
     - {{ pin_compatible('sofa-cmake', max_pin='x.x') }}
 
 requirements:
@@ -32,6 +33,14 @@ requirements:
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('clang') }}          # [win]
     - cmake
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
 
   host:
     # Packages that need to be specific to the target platform when the
@@ -40,9 +49,11 @@ requirements:
     - tudat
     - tudat-resources
     - cspice-cmake
+    - nrlmsise-00
     - sofa-cmake
     - python
     - eigen
+    - pybind11
 
   run:
     # Packages required to run the package. These are the dependencies
@@ -52,12 +63,12 @@ requirements:
     - {{ pin_compatible('pandas') }}
     - {{ pin_compatible('tabulate') }}
     - {{ pin_compatible('tudat') }}
+    - {{ pin_compatible('pybind11') }}
     - python
 
 test:
   imports:
     - tudatpy
-    - tudatpy.elements
     - tudatpy.kernel
     - tudatpy.kernel.math
     - tudatpy.kernel.math.interpolators
@@ -66,21 +77,16 @@ test:
     - tudatpy.kernel.interface
     - tudatpy.kernel.interface.spice
     - tudatpy.kernel.astro
-    - tudatpy.kernel.astro.aerodynamics
-    - tudatpy.kernel.astro.conversion
-    - tudatpy.kernel.astro.ephemerides
-    - tudatpy.kernel.astro.fundamentals
+    - tudatpy.kernel.astro.frame_conversion
+    - tudatpy.kernel.astro.element_conversion
     - tudatpy.kernel.astro.gravitation
-    - tudatpy.kernel.astro.propagators
-    - tudatpy.kernel.astro.frames
-    - tudatpy.kernel.astro.shape
     - tudatpy.kernel.astro.two_body_dynamics
     - tudatpy.kernel.constants
     - tudatpy.kernel.io
-    - tudatpy.kernel.simulation
-    - tudatpy.kernel.simulation.environment_setup
-    - tudatpy.kernel.simulation.propagation_setup
-    - tudatpy.kernel.simulation.estimation_setup
+    - tudatpy.kernel.numerical_simulation
+    - tudatpy.kernel.numerical_simulation.environment_setup
+    - tudatpy.kernel.numerical_simulation.propagation_setup
+    - tudatpy.kernel.numerical_simulation.estimation_setup
     - tudatpy.kernel.example
 
   requires:
@@ -99,7 +105,7 @@ test:
 
 
 about:
-  home: http://tudat.tudelft.nl/
+  home: https://tudat-space.readthedocs.io/
   license: BSD
   license_family: BSD
   summary: A Python platform to perform astrodynamics and space research.
