@@ -41,6 +41,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
+    - make    # [unix]
 
   host:
     # Packages that need to be specific to the target platform when the
