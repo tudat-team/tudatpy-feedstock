@@ -39,15 +39,15 @@ jobs:
    - name: Check workflow failure
      if: steps.check.outputs.status == 'failure'
      run: |
-       export MESSAGE=`rerender` workflow failed ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))...
+       export MESSAGE="`rerender` workflow failed ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))..."
    - name: Check workflow cancelled
      if: steps.check.outputs.status == 'cancelled'
      run: |
-       export MESSAGE=`rerender` workflow was cancelled! ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))
+       export MESSAGE="`rerender` workflow was cancelled! ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))"
    - name: Check workflow failure
      if: steps.check.outputs.status == 'success'
      run: |
-       export MESSAGE=`rerender` workflow was successful! :tada: ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))
+       export MESSAGE="`rerender` workflow was successful! :tada: ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))"
    - uses: actions-ecosystem/action-create-comment@v1
      with:
        github_token: ${{ secrets.github_token }}
