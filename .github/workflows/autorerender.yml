@@ -1,4 +1,4 @@
-name: Issue comment triggers
+name: .github/workflows/autorerender.yml
 
 on:
   issue_comment:
