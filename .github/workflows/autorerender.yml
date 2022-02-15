@@ -30,4 +30,7 @@ jobs:
        conda install -n root -c conda-forge conda-smithy
    - name: Rerender feedstock
      run: |
+       git config user.name "${GITHUB_ACTOR}"
+       git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
        conda smithy rerender -c auto
+       git push --all -f https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
