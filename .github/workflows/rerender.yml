@@ -1,0 +1,33 @@
+name: .github/workflows/autorerender.yml
+
+on:
+  issue_comment:
+    types: [created, edited, deleted]
+    branches: [main, develop]
+
+jobs:
+ check-comments:
+   runs-on: [ubuntu-latest]
+   if: contains(github.event.comment.body, '/rerender') 
+   steps:
+   - uses: actions/checkout@v2
+   - name: Set up Python 3.8
+     uses: actions/setup-python@v2
+     with:
+       python-version: 3.8
+   - name: Add conda to system path
+     run: |
+       # $CONDA is an environment variable pointing to the root of the miniconda directory
+       echo $CONDA/bin >> $GITHUB_PATH
+   - name: Enter root directory
+     run: |
+       cd ${GITHUB_WORKSPACE}
+   - name: Ensure conda updated
+     run: |
+       conda update conda
+   - name: Update conda
+     run: |
+       conda install -n root -c conda-forge conda-smithy
+   - name: Rerender feedstock
+     run: |
+       conda smithy rerender -c auto
