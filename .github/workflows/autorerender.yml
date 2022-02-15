@@ -34,3 +34,23 @@ jobs:
        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
        conda smithy rerender -c auto
        git push --all -f https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
+   - name: Report workflow failure
+     uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
+     with:
+       issue-number: ${{ github.event.issue.number }}
+       body: |
+         [Automated] `rerender` workflow failed ([see run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))...
+     if: steps.check.outputs.status == 'failure'
+   - name: Report workflow cancelled
+     with:
+       issue-number: ${{ github.event.issue.number }}
+       body: |
+         [Automated] `rerender` workflow was cancelled! ([see run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))
+     if: steps.check.outputs.status == 'cancelled'
+   - name: Report workflow failure
+     with:
+       issue-number: ${{ github.event.issue.number }}
+       body: |
+         [Automated] `rerender` workflow was successful! :tada: ([see run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))
+     if: steps.check.outputs.status == 'success'
+ 
