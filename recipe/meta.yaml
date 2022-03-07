@@ -90,10 +90,9 @@ test:
     - tudatpy.kernel.numerical_simulation.propagation_setup
     - tudatpy.kernel.numerical_simulation.estimation_setup
     - tudatpy.kernel.example
-    - tudatpy.plotting.plot_miller_ground_track
+    - tudatpy.plotting
     - tudatpy.util
-    - tudatpy.io.save2txt
-    - tudatpy.io.get_resource_path
+    - tudatpy.io
 
   requires:
     - pytest
@@ -104,7 +103,9 @@ test:
     - tests/test_io.py
 
   commands:
-    - python -c "from tudatpy.kernel.io import get_resource_path; print(get_resource_path())"
+    - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
+    - python -c "from tudatpy.io import save2txt"
+    - python -c "from tudatpy.plotting import plot_miller_ground_track"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
     - python -m pytest -v tests/test_constants.py
     - python -m pytest -v tests/test_io.py
