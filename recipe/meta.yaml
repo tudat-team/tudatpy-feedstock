@@ -65,6 +65,8 @@ requirements:
     - {{ pin_compatible('tabulate') }}
     - {{ pin_compatible('tudat') }}
     - {{ pin_compatible('pybind11') }}
+    - {{ pin_compatible('matplotlib') }}
+    - {{ pin_compatible('basemap') }}
     - python
 
 test:
@@ -83,12 +85,15 @@ test:
     - tudatpy.kernel.astro.gravitation
     - tudatpy.kernel.astro.two_body_dynamics
     - tudatpy.kernel.constants
-    - tudatpy.kernel.io
     - tudatpy.kernel.numerical_simulation
     - tudatpy.kernel.numerical_simulation.environment_setup
     - tudatpy.kernel.numerical_simulation.propagation_setup
     - tudatpy.kernel.numerical_simulation.estimation_setup
     - tudatpy.kernel.example
+    - tudatpy.plotting.plot_miller_ground_track
+    - tudatpy.util
+    - tudatpy.io.save2txt
+    - tudatpy.io.get_resource_path
 
   requires:
     - pytest
