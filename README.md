@@ -12,7 +12,6 @@ Summary: A Python platform to perform astrodynamics and space research.
 Current build status
 ====================
 
-
 <table>
     
   <tr>
