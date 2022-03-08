@@ -1,6 +1,6 @@
 {% set name = "tudatpy" %}
   {% set version = "0.6.3.dev0" %}
-  {% set build = "0" %}
+  {% set build = "1" %}
   {% set git_rev = "v0.6.3.dev0" %}
 
 package:
@@ -121,4 +121,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - ggarrett13
+    - geoffreygarrett
