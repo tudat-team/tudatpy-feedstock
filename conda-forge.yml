@@ -22,3 +22,7 @@ azure:
   # toggle for storing the conda build_artifacts directory (including the
   # built packages) as an Azure pipeline artifact that can be downloaded
   store_build_artifacts: True
+
+build_platform:
+  osx_arm64: osx_64
+test_on_native_only: true

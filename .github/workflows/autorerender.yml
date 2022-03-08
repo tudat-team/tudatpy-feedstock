@@ -1,0 +1,55 @@
+name: .github/workflows/autorerender.yml
+
+on:
+  issue_comment:
+    types: [created, edited, deleted]
+    branches: [main, develop]
+
+jobs:
+ check-comments:
+   runs-on: [ubuntu-latest]
+   if: contains(github.event.comment.body, '/rerender') 
+   steps:
+   - uses: actions/checkout@v2
+   - name: Set up Python 3.8
+     uses: actions/setup-python@v2
+     with:
+       python-version: 3.8
+   - name: Add conda to system path
+     run: |
+       # $CONDA is an environment variable pointing to the root of the miniconda directory
+       echo $CONDA/bin >> $GITHUB_PATH
+   - name: Enter root directory
+     run: |
+       cd ${GITHUB_WORKSPACE}
+   - name: Ensure conda updated
+     run: |
+       conda update conda
+   - name: Update conda
+     run: |
+       conda install -n root -c conda-forge conda-smithy
+   - name: Rerender feedstock
+     run: |
+       git config user.name "${GITHUB_ACTOR}"
+       git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+       conda smithy rerender -c auto
+       git push --all -f https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
+   - uses: martialonline/workflow-status@v2
+     id: check
+   - name: Check workflow failure
+     if: steps.check.outputs.status == 'failure'
+     run: |
+       export MESSAGE="rerender workflow failed ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))..."
+   - name: Check workflow cancelled
+     if: steps.check.outputs.status == 'cancelled'
+     run: |
+       export MESSAGE="rerender workflow was cancelled! ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))"
+   - name: Check workflow success
+     if: steps.check.outputs.status == 'success'
+     run: |
+       export MESSAGE="rerender workflow was successful! :tada: ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))"
+   - uses: actions-ecosystem/action-create-comment@v1
+     with:
+       github_token: ${{ secrets.github_token }}
+       body: |
+         Hello, @${{ github.actor }}! The ${{ env.MESSAGE }}

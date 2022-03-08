@@ -1,9 +1,9 @@
-python:
-  - 3.6
-  - 3.7
-  - 3.8
-numpy:
-  - 1.14
+#python:
+#  - 3.6
+#  - 3.7
+#  - 3.8
+#numpy:
+#  - 1.16
 channel_targets:
   - tudat-team main
 channel_sources:
