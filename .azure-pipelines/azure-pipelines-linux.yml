@@ -26,6 +26,11 @@ jobs:
   timeoutInMinutes: 360
 
   steps:
+  
+   - script: |
+         curl -X POST -d "token=$(READTHEDOCS_TOKEN)" https://readthedocs.org/api/v2/webhook/tudatpy/200830/
+    displayName: Trigger readthedocs API docs build
+  
   - script: |
          rm -rf /opt/ghc
          df -h
