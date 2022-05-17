@@ -8,5 +8,5 @@ resources:
 
 steps:
   - script: |
-         curl -X POST -d "token=$(READTHEDOCS_TOKEN)" https://readthedocs.org/api/v2/webhook/tudatpy/200830/
+         curl -X POST -d "token=$(READTHEDOCS-TOKEN)" https://readthedocs.org/api/v2/webhook/tudatpy/200830/
     displayName: Trigger readthedocs API docs build
