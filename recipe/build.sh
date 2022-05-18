@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
-echo "$PWD"
+
 mkdir build
 cd build
 export TUDATPY_BUILD_DIR=`pwd`
-echo "$PWD"
+
 echo "ABOUT TO BUILD TUDATPY"
 echo "NOW WOULD BE A GOOD TIME TO HAVE THE DOCSTRINGS, RIGHT?"
 
-ls /home
-ls /home/conda
-ls /home/conda/feedstock_root
-ls /home/conda/feedstock_root/build_artifacts
-ls /home/conda/feedstock_root/build_artifacts/tudatpy_1652883046229
-ls /home/conda/feedstock_root/build_artifacts/tudatpy_1652883046229/work
+echo "ls feedstock_root files:"
+ls /home/conda/feedstock_root/
+echo "ls recipe_root files:"
+ls /home/conda/recipe_root/
 
 python build_docstrings.py
 
