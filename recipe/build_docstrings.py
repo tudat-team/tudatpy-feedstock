@@ -1,0 +1,3 @@
+print("THIS SCRIPT IS NOT MADE YET, BUT SHOULD BUILD THE DOCSTRINGS")
+import sys
+print(sys.path)

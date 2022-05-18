@@ -4,6 +4,11 @@ mkdir build
 cd build
 export TUDATPY_BUILD_DIR=`pwd`
 
+echo "ABOUT TO BUILD TUDATPY"
+echo "NOW WOULD BE A GOOD TIME TO HAVE THE DOCSTRINGS, RIGHT?"
+
+python build_docstrings.py
+
 cmake \
     -DBoost_NO_BOOST_CMAKE=ON \
     -DCMAKE_BUILD_TYPE=Release \
