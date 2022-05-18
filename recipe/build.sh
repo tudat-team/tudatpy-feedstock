@@ -2,6 +2,8 @@
 
 conda install jinja2 -y
 conda install pydantic -y
+conda install yaml -y
+conda install numpydoc -y
 
 python docs/source/build_docstrings.py
 
