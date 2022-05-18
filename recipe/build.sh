@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-conda install jinja2
-conda install pydantic
+conda install jinja2 -y
+conda install pydantic -y
 
 python docs/source/build_docstrings.py
 
