@@ -5,7 +5,6 @@ import sys
 sys.path.insert(0, "$SRC_DIR/docs/source")
 print(sys.path)
 
-import subprocess
 from document import *
 
 print("document import successful")

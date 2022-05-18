@@ -6,6 +6,9 @@ echo "Current path: $PWD"
 echo "Current path ls:"
 ls
 
+echo "$SRC_DIR/docs/source ls:"
+ls $SRC_DIR/docs/source
+
 mkdir build
 cd build
 export TUDATPY_BUILD_DIR=`pwd`
