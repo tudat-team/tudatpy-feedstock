@@ -5,14 +5,11 @@ cd build
 export TUDATPY_BUILD_DIR=`pwd`
 
 echo "ABOUT TO BUILD TUDATPY"
-echo "NOW WOULD BE A GOOD TIME TO HAVE THE DOCSTRINGS, RIGHT?"
 
 echo "ls feedstock_root files:"
 ls /home/conda/feedstock_root/
-echo "ls recipe_root files:"
-ls /home/conda/recipe_root/
 
-python build_docstrings.py
+python /home/conda/feedstock_root/recipe/build_docstrings.py
 
 cmake \
     -DBoost_NO_BOOST_CMAKE=ON \
