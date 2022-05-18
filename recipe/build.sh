@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+conda install jinja2
+conda install pydantic
+
 python docs/source/build_docstrings.py
 
 echo "Docstrings built"
