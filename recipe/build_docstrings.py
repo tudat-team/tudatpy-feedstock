@@ -2,11 +2,13 @@ print("THIS SCRIPT SHOULD BUILD THE DOCSTRINGS")
 
 import sys
 
-sys.path.insert(0, "$SRC_DIR/tudatpy/docs/source")
+sys.path.insert(0, "$SRC_DIR/docs/source")
 print(sys.path)
 
 import subprocess
 from document import *
+
+print("document import successful")
 
 # clone repository
 docstring_path = get_docstrings('https://github.com/tudat-team/tudat-multidoc.git')
@@ -15,4 +17,6 @@ docstring_path = get_docstrings('https://github.com/tudat-team/tudat-multidoc.gi
 api_declaration = parse_api_declaration(docstring_path, py=True)
 
 # generate docstring header
-generate_docstring_header(api_declaration, "../../include/tudatpy/docstrings.h")
+generate_docstring_header(api_declaration, "$SRC_DIR/include/tudatpy/docstrings.h")
+
+print("docstring header generated")
