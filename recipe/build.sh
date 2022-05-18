@@ -1,19 +1,12 @@
 #!/usr/bin/env bash
 
-# Print current path
-echo "Current path: $PWD"
+python docs/source/build_docstrings.py
 
-echo "Current path ls:"
-ls
-
-echo "$SRC_DIR/docs/source ls:"
-ls $SRC_DIR/docs/source
+echo "Docstrings built"
 
 mkdir build
 cd build
 export TUDATPY_BUILD_DIR=`pwd`
-
-python /home/conda/feedstock_root/recipe/build_docstrings.py
 
 cmake \
     -DBoost_NO_BOOST_CMAKE=ON \
