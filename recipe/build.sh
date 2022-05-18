@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
+# Print current path
+echo "Current path: $PWD"
+
+echo "Current path ls:"
+ls
+
 mkdir build
 cd build
 export TUDATPY_BUILD_DIR=`pwd`
-
-echo "ABOUT TO BUILD TUDATPY"
-
-echo "ls feedstock_root files:"
-ls /home/conda/feedstock_root/
 
 python /home/conda/feedstock_root/recipe/build_docstrings.py
 

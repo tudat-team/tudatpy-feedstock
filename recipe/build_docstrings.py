@@ -1,5 +1,8 @@
 print("THIS SCRIPT SHOULD BUILD THE DOCSTRINGS")
+
 import sys
+
+sys.path.insert(0, "$SRC_DIR/tudatpy/docs/source")
 print(sys.path)
 
 import subprocess
