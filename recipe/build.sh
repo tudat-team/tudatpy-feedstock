@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+conda install jinja2 pydantic pyyaml numpydoc -y
+
+python docs/source/build_docstrings.py
+
 mkdir build
 cd build
 export TUDATPY_BUILD_DIR=`pwd`

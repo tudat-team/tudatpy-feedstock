@@ -1,0 +1,12 @@
+# app-ci YAML pipeline
+# This pipeline starts when the tudatpy-feedstock pipeline finishes
+resources:
+  pipelines:
+  - pipeline: readthedocs-api-docs
+    source: tudatpy-feedstock
+    trigger: true # Run app-ci pipeline when any run of tudatpy-feedstock completes
+
+steps:
+  - script: |
+         curl -X POST -d "token=$(READTHEDOCS-TOKEN)" https://readthedocs.org/api/v2/webhook/tudatpy/200830/
+    displayName: Trigger readthedocs API docs build
