@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
 
-conda install jinja2 pydantic pyyaml numpydoc -y
+echo "OS is:"
+echo "`uname`"
 
-python docs/source/build_docstrings.py
+if [ "`uname`" = "Linux" ]
+then
+    conda install jinja2 pydantic pyyaml numpydoc -y
+
+    python docs/source/build_docstrings.py
+fi
 
 mkdir build
 cd build
