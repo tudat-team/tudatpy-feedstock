@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 
-conda install jinja2 -y
-conda install pydantic -y
-conda install pyyaml -y
-conda install numpydoc -y
+conda install jinja2 pydantic pyyaml numpydoc -y
 
 python docs/source/build_docstrings.py
-
-echo "Docstrings built"
 
 mkdir build
 cd build
