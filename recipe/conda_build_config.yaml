@@ -5,8 +5,9 @@
 #numpy:
 #  - 1.16
 channel_targets:
-  - tudat-team dev:
-  - tudat-team/label/dev, tudat-team, conda-forge, defaults
+  - tudat-team dev
+channel_sources:
+  - tudat-team/label/dev, conda-forge, defaults
 ignore_build_only_deps:
   - numpy
   - python
