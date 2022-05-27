@@ -7,7 +7,10 @@
 channel_targets:
   - tudat-team dev
 channel_sources:
-  - tudat-team/label/dev, tudat-team, conda-forge, defaults
+  - tudat-team/label/dev
+  - tudat-team
+  - conda-forge
+  - defaults
 ignore_build_only_deps:
   - numpy
   - python
