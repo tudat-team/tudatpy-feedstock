@@ -1,9 +1,5 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
-boost:
-- '1.72'
-boost_cpp:
-- '1.72'
 c_compiler:
 - clang
 c_compiler_version:
@@ -19,10 +15,6 @@ cxx_compiler_version:
 macos_machine:
 - arm64-apple-darwin20.0.0
 pin_run_as_build:
-  boost:
-    max_pin: x.x.x
-  boost-cpp:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
