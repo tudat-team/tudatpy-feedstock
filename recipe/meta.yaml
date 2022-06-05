@@ -44,8 +44,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
     - make    # [unix]
-    - boost  {{ boost }}
-    - boost-cpp {{ boost_cpp }}
+    # - boost-cpp {{ boost_cpp }}
 
   host:
     # Packages that need to be specific to the target platform when the
