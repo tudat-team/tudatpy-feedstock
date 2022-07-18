@@ -28,6 +28,6 @@ mkdir -p $TARGET_LOCATION
 cd $TARGET_LOCATION
 
 # Fetch the Github release containing the raw data files
-wget $RESOURCE_GITHUB_URL
+curl -JLO $RESOURCE_GITHUB_URL
 
 

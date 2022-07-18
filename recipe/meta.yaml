@@ -45,6 +45,7 @@ requirements:
     - pybind11                               # [build_platform != target_platform]
     - make    # [unix]
     - boost-cpp {{ boost_cpp }}
+    - curl
 
   host:
     # Packages that need to be specific to the target platform when the
@@ -58,6 +59,7 @@ requirements:
     - python
     - eigen
     - pybind11
+    - curl
 
   run:
     # Packages required to run the package. These are the dependencies
@@ -71,6 +73,7 @@ requirements:
     - {{ pin_compatible('matplotlib') }}
     - {{ pin_compatible('basemap') }}
     - python
+    - curl
 
 test:
   imports:
