@@ -2,8 +2,8 @@
 #  - 3.6
 #  - 3.7
 #  - 3.8
-#numpy:
-#  - 1.16
+numpy:
+  - 1.21
 boost_cpp:
   - 1.72
 channel_targets:
