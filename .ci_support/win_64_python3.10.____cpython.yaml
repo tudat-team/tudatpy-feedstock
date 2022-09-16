@@ -1,8 +1,16 @@
+boost:
+- 1.74.0
+boost_cpp:
+- '1.72'
 channel_sources:
 - tudat-team, conda-forge, defaults
 channel_targets:
 - tudat-team main
 pin_run_as_build:
+  boost:
+    max_pin: x.x.x
+  boost-cpp:
+    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x

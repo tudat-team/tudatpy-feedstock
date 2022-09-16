@@ -1,13 +1,17 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
+boost:
+- 1.74.0
+boost_cpp:
+- '1.72'
 c_compiler:
 - clang
 c_compiler_version:
 - '14'
 channel_sources:
-- tudat-team, conda-forge, defaults
+- tudat-team/label/dev, tudat-team, conda-forge, defaults
 channel_targets:
-- tudat-team main
+- tudat-team dev
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
@@ -15,6 +19,10 @@ cxx_compiler_version:
 macos_machine:
 - arm64-apple-darwin20.0.0
 pin_run_as_build:
+  boost:
+    max_pin: x.x.x
+  boost-cpp:
+    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
