@@ -8,4 +8,4 @@ jobs:
   - template: ./.azure-pipelines/azure-pipelines-osx.yml
 
 variables:
-  - group: conda-smithy
+  - group: "conda-smithy"
