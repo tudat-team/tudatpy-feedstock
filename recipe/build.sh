@@ -9,7 +9,7 @@ then
 
     python docs/source/build_docstrings.py
 fi
-# conda install boost-cpp=1.72 -y
+# conda install boost-cpp=1.74 -y
 
 mkdir build
 cd build
