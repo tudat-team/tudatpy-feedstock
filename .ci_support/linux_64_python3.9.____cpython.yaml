@@ -1,7 +1,7 @@
 boost:
 - 1.78.0
 boost_cpp:
-- '1.74'
+- '1.72'
 c_compiler:
 - gcc
 c_compiler_version:

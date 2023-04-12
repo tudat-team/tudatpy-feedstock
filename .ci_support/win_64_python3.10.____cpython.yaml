@@ -1,7 +1,7 @@
 boost:
 - 1.78.0
 boost_cpp:
-- '1.74'
+- '1.72'
 channel_sources:
 - tudat-team/label/dev, tudat-team, conda-forge, defaults
 channel_targets:
