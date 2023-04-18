@@ -2,10 +2,14 @@ boost:
 - 1.78.0
 boost_cpp:
 - '1.72'
+c_compiler:
+- vs2019
 channel_sources:
 - tudat-team/label/dev, tudat-team, conda-forge, defaults
 channel_targets:
 - tudat-team dev
+cxx_compiler:
+- vs2019
 pin_run_as_build:
   boost:
     max_pin: x.x.x
