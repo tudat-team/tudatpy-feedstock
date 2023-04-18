@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: {{ git_rev }}
+  git_rev: 05a42be04d7cbfe94e565abbd2803badf0f4644b
 
 build:
   # A non-negative integer representing the build number of the package.
