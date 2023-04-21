@@ -1,5 +1,5 @@
 {% set name = "tudatpy" %}
-{% set version = "0.7.2" %}
+{% set version = "0.7.3" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - git_url: https://github.com/tudat-team/tudatpy.git
-    git_rev: d2bac11cb99012778bb3643dd76e5856b816acc8
+    git_rev: cd7c1d2db36994eab6d98e6b6361b606f6c3d9d9
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -16,7 +16,7 @@ build:
   #  and versions to determine the latest one. This is important because
   #  new builds that contain bug fixes for the way a package is built may be
   #  added to a repository.
-  number: 2
+  number: 0
 
   run_exports:
     - {{ pin_compatible('cspice-cmake', max_pin='x.x') }}
