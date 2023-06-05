@@ -4,8 +4,6 @@
 #  - 3.8
 numpy:
   - 1.21
-boost_cpp:
-  - 1.72
 channel_targets:
   - tudat-team main
 channel_sources:
