@@ -5,7 +5,7 @@ echo "`uname`"
 
 if [ "`uname`" = "Linux" ]
 then
-    conda install jinja2 pydantic pyyaml numpydoc -y
+    conda install jinja2 pydantic=1.10.9 pyyaml numpydoc -y
 
     python docs/source/build_docstrings.py
 fi
