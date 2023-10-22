@@ -3,6 +3,9 @@
 echo "OS is:"
 echo "`uname`"
 
+# Tudat dependencies
+conda install numpy scipy matplotlib tqdm -y
+
 if [ "`uname`" = "Linux" ]
 then
     conda install jinja2 pydantic=1.10.9 pyyaml numpydoc -y
