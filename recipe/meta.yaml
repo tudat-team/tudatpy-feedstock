@@ -103,6 +103,7 @@ test:
     - tests/test_interface_spice.py
     - tests/test_tutorials.py
     - tests/test_io.py
+    - tests/test_hybrid_module_exposure.py
 
   commands:
     - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
