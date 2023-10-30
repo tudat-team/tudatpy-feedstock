@@ -31,8 +31,9 @@ requirements:
     # system and include things such as revision control systems (Git, SVN) make
     # tools (GNU make, Autotool, CMake) and compilers (real cross, pseudo-cross,
     # or native when not cross-compiling), and any source pre-processors.
-    - {{ compiler('cxx') }}          
-    - {{ compiler('c') }}              
+    - {{ compiler('cxx') }}    # [not win]
+    - {{ compiler('c') }}      # [not win]
+    - {{ compiler('clang') }}  # [win]           
     - cmake
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
