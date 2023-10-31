@@ -1,6 +1,6 @@
 {% set name = "tudatpy" %}
   {% set version = "0.7.3.dev29" %}
-  {% set build = "0" %}
+  {% set build = "1" %}
   {% set git_rev = "v0.7.3.dev29" %}
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: {{ git_rev }}
+  git_rev: 3d0ef05e0c4c595352074eb2c49e0dd5b16ef15f
 
 build:
   # A non-negative integer representing the build number of the package.
