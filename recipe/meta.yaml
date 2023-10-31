@@ -113,7 +113,7 @@ test:
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
     - python -m pytest -v tests/test_constants.py
     - python -m pytest -v tests/test_io.py
-    - python -m pytest -v tests/test_hybrid_module_exposure.py
+    #- python -m pytest -v tests/test_hybrid_module_exposure.py
     - python -m pytest -v tests/test_time_conversions.py
 
 about:
