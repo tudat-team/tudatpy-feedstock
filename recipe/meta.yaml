@@ -1,6 +1,6 @@
 {% set name = "tudatpy" %}
   {% set version = "0.7.3.dev32" %}
-  {% set build = "0" %}
+  {% set build = "1" %}
   {% set git_rev = "v0.7.3.dev32" %}
 
 package:
@@ -71,6 +71,7 @@ requirements:
     - {{ pin_compatible('pybind11') }}
     - {{ pin_compatible('matplotlib') }}
     - python
+    - astroquery
 
 test:
   imports:
@@ -95,7 +96,7 @@ test:
     - tudatpy.kernel.example
     - tudatpy.plotting
     - tudatpy.util
-    #- tudatpy.io
+    - tudatpy.io
 
   requires:
     - pytest
@@ -109,14 +110,14 @@ test:
     - tests/test_dependent_variable_dictionary.py
 
   commands:
-    #- python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
-    #- python -c "from tudatpy.io import save2txt"
+    - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
+    - python -c "from tudatpy.io import save2txt"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
-    #- python -m pytest -v tests/test_constants.py
-    #- python -m pytest -v tests/test_io.py
-    #- python -m pytest -v tests/test_hybrid_module_exposure.py
-    #- python -m pytest -v tests/test_time_conversions.py
-    #- python -m pytest -v tests/test_dependent_variable_dictionary.py
+    - python -m pytest -v tests/test_constants.py
+    - python -m pytest -v tests/test_io.py
+    - python -m pytest -v tests/test_hybrid_module_exposure.py
+    - python -m pytest -v tests/test_time_conversions.py
+    - python -m pytest -v tests/test_dependent_variable_dictionary.py
 
 about:
   home: https://tudat-space.readthedocs.io/
