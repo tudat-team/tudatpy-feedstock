@@ -1,10 +1,6 @@
 github:
   user_or_org: tudat-team
 
-channels:
-  targets:
-  - [tudat-team, main]
-
 provider:
   linux: azure
   osx: azure
