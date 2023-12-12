@@ -1,13 +1,14 @@
 {% set name = "tudatpy" %}
-{% set version = "0.7.3" %}
+{% set version = "0.8.0" %}
+
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  - git_url: https://github.com/tudat-team/tudatpy.git
-    git_rev: 79d4fe7570131a751bc05a85c774f09b94917b10
+  git_url: https://github.com/tudat-team/tudatpy.git
+  git_rev: 60719404b37c8cfb747e9d4cd7ef6f865b148acf
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -16,8 +17,7 @@ build:
   #  and versions to determine the latest one. This is important because
   #  new builds that contain bug fixes for the way a package is built may be
   #  added to a repository.
-  number: 3
-
+  number: 0
   run_exports:
     - {{ pin_compatible('cspice-cmake', max_pin='x.x') }}
     - {{ pin_compatible('tudat-resources', max_pin='x.x') }}
@@ -30,8 +30,8 @@ requirements:
     # system and include things such as revision control systems (Git, SVN) make
     # tools (GNU make, Autotool, CMake) and compilers (real cross, pseudo-cross,
     # or native when not cross-compiling), and any source pre-processors.
-    - {{ compiler('cxx') }}           
-    - {{ compiler('c') }}              
+    - {{ compiler('cxx') }}    
+    - {{ compiler('c') }}      
     - cmake
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
@@ -43,6 +43,7 @@ requirements:
     - pybind11                               # [build_platform != target_platform]
     - make    # [unix]
     - boost-cpp {{ boost_cpp }}
+
 
   host:
     # Packages that need to be specific to the target platform when the
@@ -67,8 +68,8 @@ requirements:
     - {{ pin_compatible('tudat') }}
     - {{ pin_compatible('pybind11') }}
     - {{ pin_compatible('matplotlib') }}
-
     - python
+    - astroquery
 
 test:
   imports:
@@ -102,6 +103,9 @@ test:
     - tests/test_interface_spice.py
     - tests/test_tutorials.py
     - tests/test_io.py
+    - tests/test_hybrid_module_exposure.py
+    - tests/test_time_conversions.py
+    - tests/test_dependent_variable_dictionary.py
 
   commands:
     - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
@@ -109,7 +113,9 @@ test:
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
     - python -m pytest -v tests/test_constants.py
     - python -m pytest -v tests/test_io.py
-
+    - python -m pytest -v tests/test_hybrid_module_exposure.py
+    - python -m pytest -v tests/test_time_conversions.py
+    - python -m pytest -v tests/test_dependent_variable_dictionary.py
 
 about:
   home: https://tudat-space.readthedocs.io/
