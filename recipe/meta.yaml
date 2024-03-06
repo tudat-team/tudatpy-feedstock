@@ -1,7 +1,7 @@
 {% set name = "tudatpy" %}
-  {% set version = "0.8.0.dev1" %}
-  {% set build = "1" %}
-  {% set git_rev = "v0.8.0.dev1" %}
+  {% set version = "0.8.0.dev2" %}
+  {% set build = "0" %}
+  {% set git_rev = "v0.8.0.dev2" %}
 
 package:
   name: {{ name }}
@@ -108,7 +108,9 @@ test:
     - tests/test_hybrid_module_exposure.py
     - tests/test_time_conversions.py
     - tests/test_dependent_variable_dictionary.py
-
+    - tests/test_data_mpc.py
+    - tests/test_data_horizons.py
+    
   commands:
     - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
     - python -c "from tudatpy.io import save2txt"
@@ -118,6 +120,8 @@ test:
     - python -m pytest -v tests/test_hybrid_module_exposure.py
     - python -m pytest -v tests/test_time_conversions.py
     - python -m pytest -v tests/test_dependent_variable_dictionary.py
+    - python -m pytest -v tests/test_data_mpc.py
+    - python -m pytest -v tests/test_data_horizons.py
 
 about:
   home: https://tudat-space.readthedocs.io/
