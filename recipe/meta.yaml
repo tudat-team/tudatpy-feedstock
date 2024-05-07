@@ -72,6 +72,8 @@ requirements:
     - {{ pin_compatible('matplotlib') }}
     - python
     - astroquery
+    - astropy
+    - astropy-healpix
 
 test:
   imports:
