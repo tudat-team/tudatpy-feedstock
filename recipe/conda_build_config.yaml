@@ -6,6 +6,11 @@ python:
   - 3.9
   - 3.10
   - 3.11
-ignore_build_only_deps:
-  - numpy
-  - python
+python_impl:
+  - cpython
+  - cpython
+  - cpython
+numpy:
+  - 1.25.*
+  - 1.25.*
+  - 1.25.*
