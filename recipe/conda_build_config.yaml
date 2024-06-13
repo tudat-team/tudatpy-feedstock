@@ -16,7 +16,11 @@ numpy:
   - 1.25.*
   - 1.25.*
   - 1.25.*
-c_compiler:                        # [win] 
-  - vs2019                         # [win]
-cxx_compiler:                      # [win] 
-  - vs2019                         # [win]
+c_compiler:
+  - clang
+c_compiler_version:
+  - 18
+cxx_compiler:
+  - clangxx
+cxx_compiler_version:
+  - 18
