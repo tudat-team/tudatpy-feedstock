@@ -59,6 +59,7 @@ requirements:
     - python
     - eigen
     - pybind11
+    - mypy
 
   run:
     # Packages required to run the package. These are the dependencies
