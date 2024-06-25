@@ -8,29 +8,25 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_python3.10.____cpython:
-        CONFIG: linux_64_python3.10.____cpython
+      linux_64_python3.10:
+        CONFIG: linux_64_python3.10
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-        SHORT_CONFIG: linux_64_python3.10.____cpython
-      linux_64_python3.8.____cpython:
-        CONFIG: linux_64_python3.8.____cpython
+        SHORT_CONFIG: linux_64_python3.10
+      linux_64_python3.11:
+        CONFIG: linux_64_python3.11
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-        SHORT_CONFIG: linux_64_python3.8.____cpython
-      linux_64_python3.9.____cpython:
-        CONFIG: linux_64_python3.9.____cpython
+        SHORT_CONFIG: linux_64_python3.11
+      linux_64_python3.9:
+        CONFIG: linux_64_python3.9
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-        SHORT_CONFIG: linux_64_python3.9.____cpython
+        SHORT_CONFIG: linux_64_python3.9
   timeoutInMinutes: 360
+  variables: {}
 
   steps:
-  - script: |
-         rm -rf /opt/ghc
-         df -h
-    displayName: Manage disk space
-
   # configure qemu binfmt-misc running.  This allows us to run docker containers
   # embedded qemu-static
   - script: |
@@ -41,6 +37,9 @@ jobs:
 
   - script: |
         export CI=azure
+        export flow_run_id=azure_$(Build.BuildNumber).$(System.JobAttempt)
+        export remote_url=$(Build.Repository.Uri)
+        export sha=$(Build.SourceVersion)
         export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
         export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
         if [[ "${BUILD_REASON:-}" == "PullRequest" ]]; then

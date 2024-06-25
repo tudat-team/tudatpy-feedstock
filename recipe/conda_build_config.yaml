@@ -1,13 +1,26 @@
-#python:
-#  - 3.6
-#  - 3.7
-#  - 3.8
-numpy:
-  - 1.21
 channel_targets:
   - tudat-team dev
 channel_sources:
   - tudat-team/label/dev, tudat-team, conda-forge, defaults
-ignore_build_only_deps:
-  - numpy
-  - python
+boost_cpp:
+  - 1.78.0
+python:
+  - 3.9
+  - 3.10
+  - 3.11
+python_impl:
+  - cpython
+  - cpython
+  - cpython
+numpy:
+  - 1.25.*
+  - 1.25.*
+  - 1.25.*
+c_compiler:
+  - clang
+c_compiler_version:
+  - 18
+cxx_compiler:
+  - clangxx
+cxx_compiler_version:
+  - 18

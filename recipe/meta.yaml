@@ -1,5 +1,5 @@
 {% set name = "tudatpy" %}
-  {% set version = "0.7.3.dev25" %}
+  {% set version = "0.8.0.dev9" %}
   {% set build = "0" %}
   {% set git_rev = "c51a1b5490df82bec17c3a12108c3f304412a539" %}
 
@@ -31,8 +31,9 @@ requirements:
     # system and include things such as revision control systems (Git, SVN) make
     # tools (GNU make, Autotool, CMake) and compilers (real cross, pseudo-cross,
     # or native when not cross-compiling), and any source pre-processors.
-    - {{ compiler('cxx') }}          
-    - {{ compiler('c') }}              
+    - {{ compiler('cxx') }}    # [not win]
+    - {{ compiler('c') }}      # [not win]
+    - {{ compiler('clang') }}  # [win] 
     - cmake
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
@@ -59,6 +60,7 @@ requirements:
     - python
     - eigen
     - pybind11
+    - mypy
 
   run:
     # Packages required to run the package. These are the dependencies
@@ -71,6 +73,9 @@ requirements:
     - {{ pin_compatible('pybind11') }}
     - {{ pin_compatible('matplotlib') }}
     - python
+    - astroquery
+    - astropy
+    - astropy-healpix
 
 test:
   imports:
@@ -104,15 +109,24 @@ test:
     - tests/test_interface_spice.py
     - tests/test_tutorials.py
     - tests/test_io.py
-
+    - tests/test_hybrid_module_exposure.py
+    - tests/test_time_conversions.py
+    - tests/test_dependent_variable_dictionary.py
+    - tests/test_data_mpc.py
+    - tests/test_data_horizons.py
+    - tests/test_data_biases.py
+    
   commands:
     - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
     - python -c "from tudatpy.io import save2txt"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
     - python -m pytest -v tests/test_constants.py
     - python -m pytest -v tests/test_io.py
-
-
+    - python -m pytest -v tests/test_hybrid_module_exposure.py
+    - python -m pytest -v tests/test_time_conversions.py
+    - python -m pytest -v tests/test_dependent_variable_dictionary.py
+    - python -m pytest -v tests/test_data_horizons.py
+    - python -m pytest -v tests/test_data_biases.py
 about:
   home: https://tudat-space.readthedocs.io/
   license: BSD
