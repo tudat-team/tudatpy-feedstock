@@ -46,7 +46,9 @@ requirements:
     - make    # [unix]
     - boost-cpp {{ boost_cpp }}
     - mypy
-
+    - matplotlib
+    - tqdm
+    - scipy
 
   host:
     # Packages that need to be specific to the target platform when the
