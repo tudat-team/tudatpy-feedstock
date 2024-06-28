@@ -49,6 +49,7 @@ requirements:
     - matplotlib
     - tqdm
     - scipy
+    - git-lfs
 
   host:
     # Packages that need to be specific to the target platform when the
