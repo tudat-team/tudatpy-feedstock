@@ -22,3 +22,5 @@
 /build_artifacts
 
 *.pyc
+/SDKs/
+/miniforge3/
