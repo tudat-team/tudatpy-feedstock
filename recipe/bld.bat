@@ -5,6 +5,7 @@ SET TUDATPY_BUILD_DIR=%cd%
 git clone https://github.com/pybind/pybind11.git
 cd pybind11
 git checkout d159a563383d10c821ba7b2a71905d1207db6de4
+pip install astroquery>=0.4.8.dev9306
 mkdir build
 cd build
 cmake ^
