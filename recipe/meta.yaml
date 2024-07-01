@@ -1,7 +1,7 @@
 {% set name = "tudatpy" %}
-  {% set version = "0.8.0.dev9" %}
+  {% set version = "0.8.0.dev8" %}
   {% set build = "0" %}
-  {% set git_rev = "v0.8.0.dev9" %}
+  {% set git_rev = "v0.8.0.dev8" %}
 
 package:
   name: {{ name }}
@@ -59,7 +59,6 @@ requirements:
     - python
     - eigen
     - pybind11
-    - mypy
 
   run:
     # Packages required to run the package. These are the dependencies
