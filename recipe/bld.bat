@@ -9,6 +9,7 @@ mkdir build
 cd build
 cmake ^
     -G "Ninja" ^
+    -DCMAKE_CXX_COMPILER=%BUILD_PREFIX%/Library/bin/clang.exe ^
     -DPYBIND11_TEST=NO ^
     -DCMAKE_INSTALL_PREFIX=%TUDATPY_BUILD_DIR% ^
     -DCMAKE_PREFIX_PATH=%TUDATPY_BUILD_DIR% ^
