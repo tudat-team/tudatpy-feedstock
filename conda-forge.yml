@@ -2,8 +2,8 @@ github:
   user_or_org: tudat-team
 
 provider:
-  linux: azure
-  osx: azure
+  linux: None
+  osx: None
   win: azure
   linux_ppc64le: None
   linux_aarch64: None
@@ -19,6 +19,6 @@ azure:
   variables:
     - group: "conda-smithy"
 
-build_platform:
-  osx_arm64: osx_64
+#build_platform:
+#  osx_arm64: osx_64
 test_on_native_only: true
