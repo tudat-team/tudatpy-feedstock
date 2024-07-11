@@ -1,5 +1,5 @@
 diff --git a/cmake/YACMAPythonSetup.cmake b/cmake/YACMAPythonSetup.cmake
-index 0387c37..af589c5 100644
+index 0387c37..bf66d0f 100644
 --- a/cmake/YACMAPythonSetup.cmake
 +++ b/cmake/YACMAPythonSetup.cmake
 @@ -24,7 +24,7 @@ if(_YACMA_PYTHON_MODULE_NEED_LINK)
@@ -7,7 +7,7 @@ index 0387c37..af589c5 100644
      # NOTE: we need to determine the include dir on our own.
      if(NOT YACMA_PYTHON_INCLUDE_DIR)
 -        execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "from __future__ import print_function\nfrom distutils import sysconfig\nprint(sysconfig.get_python_inc())"
-+        execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "from setuptools import distutils\nprint(distutils.sysconfig.get_python_inc())"
++        execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "from sysconfig import get_paths as gp; print(gp()['include'])"
                  OUTPUT_VARIABLE _YACMA_PYTHON_INCLUDE_DIR OUTPUT_STRIP_TRAILING_WHITESPACE)
          if(_YACMA_PYTHON_INCLUDE_DIR)
              set(YACMA_PYTHON_INCLUDE_DIR "${_YACMA_PYTHON_INCLUDE_DIR}" CACHE PATH "Path to the Python include dir.")
