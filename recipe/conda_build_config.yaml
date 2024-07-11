@@ -5,16 +5,19 @@ channel_sources:
 boost_cpp:
   - 1.78.0
 python:
-#  - 3.9
-#  - 3.10
+  - 3.9
+  - 3.10
   - 3.11
+  - 3.12
 python_impl:
-#  - cpython
-#  - cpython
+  - cpython
+  - cpython
+  - cpython
   - cpython
 numpy:
-#  - 1.25.*
-#  - 1.25.*
+  - 1.25.*
+  - 1.25.*
+  - 1.25.*
   - 1.25.*
 c_compiler:
   - clang

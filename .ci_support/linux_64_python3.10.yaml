@@ -1,0 +1,29 @@
+boost_cpp:
+- 1.78.0
+c_compiler:
+- clang
+c_compiler_version:
+- '18'
+cdt_name:
+- cos7
+channel_sources:
+- tudat-team/label/dev, tudat-team, conda-forge, defaults
+channel_targets:
+- tudat-team dev
+cxx_compiler:
+- clangxx
+cxx_compiler_version:
+- '18'
+docker_image:
+- quay.io/condaforge/linux-anvil-cos7-x86_64
+pin_run_as_build:
+  python:
+    min_pin: x.x
+    max_pin: x.x
+python:
+- '3.10'
+target_platform:
+- linux-64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
