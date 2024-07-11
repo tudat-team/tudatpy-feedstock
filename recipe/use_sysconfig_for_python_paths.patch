@@ -47,7 +47,7 @@ index 0387c37..7f6af84 100644
 @@ -87,6 +92,7 @@ else()
      message(FATAL_ERROR "Platform not supported.")
  endif()
-
+ 
 +
  # Check the install path was actually detected.
  if("${YACMA_PYTHON_MODULES_INSTALL_PATH}" STREQUAL "")
