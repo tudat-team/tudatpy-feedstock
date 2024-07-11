@@ -28,6 +28,7 @@ cmake ^
     -DBoost_NO_BOOST_CMAKE=ON ^
     -DCMAKE_BUILD_TYPE=Release ^
     -Dpybind11_DIR=%TUDATPY_BUILD_DIR%\share\cmake\pybind11\ ^
+    -DCMAKE_CXX_FLAGS_RELEASE="/Zm200 /Ob2 /Oi /Ot" ^
     -DCMAKE_C_COMPILER=cl.exe ^
     -DCMAKE_CXX_COMPILER=cl.exe ^
     ..
