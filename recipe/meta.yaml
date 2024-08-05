@@ -1,7 +1,7 @@
 {% set name = "tudatpy" %}
   {% set version = "0.8.0.dev9" %}
   {% set build = "0" %}
-  {% set git_rev = "v0.8.0.dev8" %}
+  {% set git_rev = "v0.8.0.dev9" %}
 
 package:
   name: {{ name }}
@@ -98,10 +98,9 @@ test:
     - tudatpy.kernel.numerical_simulation.environment_setup
     - tudatpy.kernel.numerical_simulation.propagation_setup
     - tudatpy.kernel.numerical_simulation.estimation_setup
-    - tudatpy.kernel.example
     - tudatpy.plotting
     - tudatpy.util
-    - tudatpy.io
+    - tudatpy.data
 
   requires:
     - pytest
@@ -118,6 +117,7 @@ test:
     - tests/test_data_biases.py
     
   commands:
+    - pip install astroquery==0.4.8.dev9321
     - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
     - python -c "from tudatpy.io import save2txt"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
