@@ -73,6 +73,7 @@ requirements:
     - {{ pin_compatible('tudat') }}
     - {{ pin_compatible('pybind11') }}
     - {{ pin_compatible('matplotlib') }}
+    - pip
     - python
     - astroquery
     - astropy
