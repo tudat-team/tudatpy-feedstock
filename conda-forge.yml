@@ -4,10 +4,12 @@ github:
 provider:
   linux: azure
   osx: azure
-  win: azure
   linux_ppc64le: None
   linux_aarch64: None
 
+build_platform:
+  osx_arm64: osx_64
+  
 appveyor:
   secure:
     BINSTAR_TOKEN: vWktDJSW9Rh2frmNkzdUHF2n4WzalOoKudWGdBLo6jcC/suzU+fViO/3/TxLOnmW
@@ -16,9 +18,5 @@ azure:
   # toggle for storing the conda build_artifacts directory (including the
   # built packages) as an Azure pipeline artifact that can be downloaded
   store_build_artifacts: True
-  variables:
-    - group: "conda-smithy"
 
-build_platform:
-  osx_arm64: osx_64
-test_on_native_only: true
+test: native_and_emulated
