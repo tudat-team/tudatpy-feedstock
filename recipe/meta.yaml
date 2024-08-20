@@ -9,7 +9,8 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: {{ git_rev }}
+  git_rev: 23b80d85686272c0b93dbe5ac33a3373d80f5a4a
+  # git_rev: {{ git_rev }}
   patches:
     - use_sysconfig_for_python_paths.patch
 
@@ -35,7 +36,7 @@ requirements:
     # or native when not cross-compiling), and any source pre-processors.
     - {{ compiler('cxx') }}    # [not win]
     - {{ compiler('c') }}      # [not win]
-    - {{ compiler('clang') }}  # [win] 
+    - {{ compiler('clang') }}  # [win]
     - cmake
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
@@ -116,7 +117,7 @@ test:
     - tests/test_data_mpc.py
     - tests/test_data_horizons.py
     - tests/test_data_biases.py
-    
+
   commands:
     - pip install astroquery==0.4.8.dev9321
     - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
