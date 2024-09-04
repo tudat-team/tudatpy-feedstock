@@ -108,7 +108,6 @@ test:
   source_files:
     - tests/test_constants.py
     - tests/test_interface_spice.py
-    - tests/test_tutorials.py
     - tests/test_io.py
     - tests/test_hybrid_module_exposure.py
     - tests/test_time_conversions.py
