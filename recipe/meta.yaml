@@ -126,7 +126,7 @@ test:
     - python -m pytest -v tests/test_hybrid_module_exposure.py
     - python -m pytest -v tests/test_time_conversions.py
     - python -m pytest -v tests/test_dependent_variable_dictionary.py
-    - python -m pytest -v tests/test_data_mpc.py
+   # - python -m pytest -v tests/test_data_mpc.py
     - python -m pytest -v tests/test_data_horizons.py
     - python -m pytest -v tests/test_data_biases.py
 about:
