@@ -11,6 +11,7 @@ then
 fi
 # conda install boost-cpp=1.72 -y
 
+python install.py
 python build.py
 
 # mkdir build
