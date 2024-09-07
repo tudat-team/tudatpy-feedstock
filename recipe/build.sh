@@ -11,21 +11,23 @@ then
 fi
 # conda install boost-cpp=1.72 -y
 
-mkdir build
-cd build
-export TUDATPY_BUILD_DIR=`pwd`
+python build.py
 
-cmake \
-    -DBoost_NO_BOOST_CMAKE=ON \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=$PREFIX \
-    -DCMAKE_PREFIX_PATH=$PREFIX \
-    -DCMAKE_CXX_STANDARD=14 \
-    -DTUDATPY_CONDA_BUILD=on \
-    -D_GLIBCXX_USE_CXX11_ABI=1 \
-    -DCMAKE_CXX_FLAGS_RELEASE="-Wno-macro-redefined -Wunused-parameter" \
-    ..
+# mkdir build
+# cd build
+# export TUDATPY_BUILD_DIR=`pwd`
 
-cmake --build . -v
+# cmake \
+#     -DBoost_NO_BOOST_CMAKE=ON \
+#     -DCMAKE_BUILD_TYPE=Release \
+#     -DCMAKE_INSTALL_PREFIX=$PREFIX \
+#     -DCMAKE_PREFIX_PATH=$PREFIX \
+#     -DCMAKE_CXX_STANDARD=14 \
+#     -DTUDATPY_CONDA_BUILD=on \
+#     -D_GLIBCXX_USE_CXX11_ABI=1 \
+#     -DCMAKE_CXX_FLAGS_RELEASE="-Wno-macro-redefined -Wunused-parameter" \
+#     ..
 
-make install
+# cmake --build . -v
+
+# make install
