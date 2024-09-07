@@ -26,7 +26,6 @@ cmake \
     -DCMAKE_CXX_FLAGS_RELEASE="-Wno-macro-redefined -Wunused-parameter" \
     ..
 
-make
+cmake --build . -v
 
 make install
-
