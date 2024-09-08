@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: 9bf6096e1994cb46d262484605590d8b7c459dfb
+  git_rev: 99cb522832635ae9a7c8c1ed734c91830d18a323
   # git_rev: {{ git_rev }}
   # patches:
   #   - use_sysconfig_for_python_paths.patch
@@ -85,23 +85,23 @@ requirements:
 test:
   imports:
     - tudatpy
-    - tudatpy.kernel
-    - tudatpy.kernel.math
-    - tudatpy.kernel.math.interpolators
-    - tudatpy.kernel.math.numerical_integrators
-    - tudatpy.kernel.math.root_finders
-    - tudatpy.kernel.interface
-    - tudatpy.kernel.interface.spice
-    - tudatpy.kernel.astro
-    - tudatpy.kernel.astro.frame_conversion
-    - tudatpy.kernel.astro.element_conversion
-    - tudatpy.kernel.astro.gravitation
-    - tudatpy.kernel.astro.two_body_dynamics
-    - tudatpy.kernel.constants
-    - tudatpy.kernel.numerical_simulation
-    - tudatpy.kernel.numerical_simulation.environment_setup
-    - tudatpy.kernel.numerical_simulation.propagation_setup
-    - tudatpy.kernel.numerical_simulation.estimation_setup
+    - tudatpy
+    - tudatpy.math
+    - tudatpy.math.interpolators
+    - tudatpy.math.numerical_integrators
+    - tudatpy.math.root_finders
+    - tudatpy.interface
+    - tudatpy.interface.spice
+    - tudatpy.astro
+    - tudatpy.astro.frame_conversion
+    - tudatpy.astro.element_conversion
+    - tudatpy.astro.gravitation
+    - tudatpy.astro.two_body_dynamics
+    - tudatpy.constants
+    - tudatpy.numerical_simulation
+    - tudatpy.numerical_simulation.environment_setup
+    - tudatpy.numerical_simulation.propagation_setup
+    - tudatpy.numerical_simulation.estimation_setup
     - tudatpy.plotting
     - tudatpy.util
     - tudatpy.data
