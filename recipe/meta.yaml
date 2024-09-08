@@ -63,6 +63,7 @@ requirements:
     - python
     - eigen
     - pybind11
+    - pybind11-stubgen
     - mypy
 
   run:
