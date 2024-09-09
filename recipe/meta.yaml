@@ -49,7 +49,6 @@ requirements:
     - pybind11                               # [build_platform != target_platform]
     - make    # [unix]
     - boost-cpp {{ boost_cpp }}
-    - scikit-build-core
 
 
   host:
