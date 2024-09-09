@@ -35,3 +35,21 @@ build_platform:
 CONDA_BUILD_SYSROOT:
 - /Users/alfonso/home/code/tudat-dev/tudatpy-feedstock/SDKs/MacOSX11.0.sdk
 
+build_platform:
+- osx-64
+
+CONDA_BUILD_SYSROOT:
+- /Users/alfonso/home/code/tudat-dev/tudatpy-feedstock/SDKs/MacOSX11.0.sdk
+
+build_platform:
+- osx-64
+
+CONDA_BUILD_SYSROOT:
+- /Users/alfonso/home/code/tudat-dev/tudatpy-feedstock/SDKs/MacOSX11.0.sdk
+
+build_platform:
+- osx-64
+
+CONDA_BUILD_SYSROOT:
+- /Users/alfonso/home/code/tudat-dev/tudatpy-feedstock/SDKs/MacOSX11.0.sdk
+
