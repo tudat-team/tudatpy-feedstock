@@ -11,8 +11,8 @@ then
 fi
 # conda install boost-cpp=1.72 -y
 
-python setup.py -j4
-python generate_stubs.py
+pip install .
+python stubs.py
 
 # mkdir build
 # cd build
