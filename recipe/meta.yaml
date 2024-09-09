@@ -49,6 +49,7 @@ requirements:
     - pybind11                               # [build_platform != target_platform]
     - make    # [unix]
     - boost-cpp {{ boost_cpp }}
+    - scikit_build_core
 
 
   host:
@@ -81,6 +82,7 @@ requirements:
     - astroquery
     - astropy
     - astropy-healpix
+    - pybind11-stubgen
 
 test:
   imports:
