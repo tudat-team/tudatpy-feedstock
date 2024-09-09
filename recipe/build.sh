@@ -11,7 +11,7 @@ echo "`uname`"
 # fi
 # conda install boost-cpp=1.72 -y
 
-pip install . --vv
+pip install . -v
 python stubs.py
 
 # mkdir build
