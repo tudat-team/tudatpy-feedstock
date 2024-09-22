@@ -3,7 +3,7 @@
 echo "OS is:"
 echo "`uname`"
 
-{{ PYTHON }} -m pip install . -v
+python -m pip install . -v
 
 # if [ "`uname`" = "Linux" ]
 # then

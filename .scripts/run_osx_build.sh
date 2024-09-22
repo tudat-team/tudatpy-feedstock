@@ -25,11 +25,14 @@ conda activate base
 export CONDA_SOLVER="libmamba"
 export CONDA_LIBMAMBA_SOLVER_NO_CHANNELS_FROM_INSTALLED=1
 
-mamba install --update-specs --quiet --yes --channel conda-forge --strict-channel-priority \
-    pip mamba conda-build conda-forge-ci-setup=4 "conda-build>=24.1"
+# mamba install --update-specs --quiet --yes --channel conda-forge --strict-channel-priority \
+#     pip mamba conda-build conda-forge-ci-setup=4 "conda-build>=24.1"
+# mamba update --update-specs --yes --quiet --channel conda-forge --strict-channel-priority \
+#     pip mamba conda-build conda-forge-ci-setup=4 "conda-build>=24.1"
+mamba install --update-specs --yes --quiet --channel conda-forge --strict-channel-priority \
+    mamba conda-build conda-forge-ci-setup=4 "conda-build>=24.1"
 mamba update --update-specs --yes --quiet --channel conda-forge --strict-channel-priority \
-    pip mamba conda-build conda-forge-ci-setup=4 "conda-build>=24.1"
-
+    mamba conda-build conda-forge-ci-setup=4 "conda-build>=24.1"
 
 
 echo -e "\n\nSetting up the condarc and mangling the compiler."
