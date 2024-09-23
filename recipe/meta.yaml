@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: 3e9643f235cdfc09dfd8519dc19fbc672c305300
+  git_rev: a3aa65b7260881ca50451c5acd42d737e2b5df69
   # git_rev: {{ git_rev }}
   patches:
     - use_sysconfig_for_python_paths.patch
@@ -76,7 +76,6 @@ requirements:
 test:
   imports:
     - tudatpy
-    - tudatpy
     - tudatpy.math
     - tudatpy.math.interpolators
     - tudatpy.math.numerical_integrators
@@ -112,8 +111,8 @@ test:
 
   commands:
     - pip install astroquery==0.4.8.dev9321
-    - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
-    - python -c "from tudatpy.io import save2txt"
+    - python -c "from tudatpy.data import get_resource_path; print(get_resource_path())"
+    - python -c "from tudatpy.data import save2txt"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
     - python -m pytest -v tests/test_constants.py
     - python -m pytest -v tests/test_io.py
