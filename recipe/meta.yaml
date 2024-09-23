@@ -11,8 +11,8 @@ source:
   git_url: https://github.com/tudat-team/tudatpy.git
   git_rev: a3aa65b7260881ca50451c5acd42d737e2b5df69
   # git_rev: {{ git_rev }}
-  patches:
-    - use_sysconfig_for_python_paths.patch
+  # patches:
+    # - use_sysconfig_for_python_paths.patch
 
 build:
   # A non-negative integer representing the build number of the package.
