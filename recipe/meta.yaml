@@ -112,8 +112,8 @@ test:
 
   commands:
     - pip install astroquery==0.4.8.dev9321
-    - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
-    - python -c "from tudatpy.io import save2txt"
+   # - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
+   # - python -c "from tudatpy.io import save2txt"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
     - python -m pytest -v tests/test_constants.py
     - python -m pytest -v tests/test_io.py
