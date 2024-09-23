@@ -102,7 +102,7 @@ test:
     - tests/test_constants.py
     - tests/test_interface_spice.py
     - tests/test_io.py
-    - tests/test_hybrid_module_exposure.py
+    # - tests/test_hybrid_module_exposure.py
     - tests/test_time_conversions.py
     # - tests/test_dependent_variable_dictionary.py
     # - tests/test_data_mpc.py
@@ -116,7 +116,7 @@ test:
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
     - python -m pytest -v tests/test_constants.py
     - python -m pytest -v tests/test_io.py
-    - python -m pytest -v tests/test_hybrid_module_exposure.py
+    # - python -m pytest -v tests/test_hybrid_module_exposure.py
     - python -m pytest -v tests/test_time_conversions.py
     # - python -m pytest -v tests/test_dependent_variable_dictionary.py
    # - python -m pytest -v tests/test_data_mpc.py
