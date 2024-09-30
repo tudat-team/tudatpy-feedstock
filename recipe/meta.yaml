@@ -39,13 +39,13 @@ requirements:
     - {{ compiler('clang') }}  # [win]
     - cmake
     - make    # [unix]
+    - cross-python_{{ target_platform }}
 
   host:
     # Packages that need to be specific to the target platform when the
     # target platform is not necessarily the same as the native build
     # platform
     - python
-    - cross-python_{{ target_platform }}
     - pip
     - pybind11
     - numpy
