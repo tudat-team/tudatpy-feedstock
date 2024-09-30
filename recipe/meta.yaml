@@ -48,7 +48,7 @@ requirements:
     - pip
     - pybind11
     - numpy
-    - tudat
+    - tudat=2.13.0.dev16
     - tudat-resources
     - cspice-cmake
     - nrlmsise-00
