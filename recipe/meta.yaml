@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: 522eee6bb16cefcd7f56d0a7af1106f9ae2ec558
+  git_rev: f21ba841d6edf4da2de3bb044295227a6a67a57a
   # git_rev: {{ git_rev }}
   # patches:
     # - use_sysconfig_for_python_paths.patch
@@ -38,24 +38,30 @@ requirements:
     - {{ compiler('c') }}      # [not win]
     - {{ compiler('clang') }}  # [win]
     - cmake
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
     - make    # [unix]
-    - cross-python_{{ target_platform }}
+    - boost-cpp {{ boost_cpp }}
+
 
   host:
     # Packages that need to be specific to the target platform when the
     # target platform is not necessarily the same as the native build
     # platform
-    - python
-    - pip
-    - pybind11
-    - numpy
-    - tudat=2.13.0.dev16
+    - tudat
     - tudat-resources
     - cspice-cmake
     - nrlmsise-00
     - sofa-cmake
+    - python
     - eigen
-    - boost-cpp {{ boost_cpp }}
+    - pybind11
     - mypy
 
   run:
