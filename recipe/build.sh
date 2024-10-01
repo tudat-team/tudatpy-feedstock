@@ -29,4 +29,3 @@ cmake \
 make
 
 make install
-
