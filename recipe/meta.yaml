@@ -1,7 +1,7 @@
 {% set name = "tudatpy" %}
   {% set version = "0.8.0.dev15" %}
   {% set build = "0" %}
-  {% set git_rev = "v0.8.0.dev15" %}
+  {% set git_rev = "v" + version %}
 
 package:
   name: {{ name }}
@@ -35,7 +35,7 @@ requirements:
     # or native when not cross-compiling), and any source pre-processors.
     - {{ compiler('cxx') }}    # [not win]
     - {{ compiler('c') }}      # [not win]
-    - {{ compiler('clang') }}  # [win] 
+    - {{ compiler('clang') }}  # [win]
     - cmake
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
@@ -115,7 +115,7 @@ test:
     - tests/test_data_mpc.py
     - tests/test_data_horizons.py
     - tests/test_data_biases.py
-    
+
   commands:
     - pip install astroquery==0.4.8.dev9321
     - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
