@@ -115,6 +115,7 @@ test:
     - tests/test_data_mpc.py
     - tests/test_data_horizons.py
     - tests/test_data_biases.py
+    - tests/test_data_weights.py
 
   commands:
     - pip install astroquery==0.4.8.dev9321
@@ -126,9 +127,10 @@ test:
     - python -m pytest -v tests/test_hybrid_module_exposure.py
     - python -m pytest -v tests/test_time_conversions.py
     - python -m pytest -v tests/test_dependent_variable_dictionary.py
-   # - python -m pytest -v tests/test_data_mpc.py
+    - python -m pytest -v tests/test_data_mpc.py
     - python -m pytest -v tests/test_data_horizons.py
     - python -m pytest -v tests/test_data_biases.py
+    - python -m pytest -v tests/test_data_weights.py
 about:
   home: https://tudat-space.readthedocs.io/
   license: BSD
