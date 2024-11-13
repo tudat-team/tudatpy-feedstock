@@ -3,12 +3,6 @@
 echo "OS is:"
 echo "`uname`"
 
-if [ "`uname`" = "Linux" ]
-then
-    conda install jinja2 pydantic=1.10.9 pyyaml numpydoc -y
-
-    python docs/source/build_docstrings.py
-fi
 # conda install boost-cpp=1.72 -y
 
 mkdir build

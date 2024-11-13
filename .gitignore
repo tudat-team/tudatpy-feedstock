@@ -22,3 +22,6 @@
 /build_artifacts
 
 *.pyc
+
+# allow bumpversion config file to be versioned
+!.bumpversion.cfg

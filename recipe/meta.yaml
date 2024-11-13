@@ -1,7 +1,7 @@
 {% set name = "tudatpy" %}
-  {% set version = "0.8.0.dev15" %}
+  {% set version = "0.8.0.dev34" %}
   {% set build = "0" %}
-  {% set git_rev = "v0.8.0.dev15" %}
+  {% set git_rev = "v" + version %}
 
 package:
   name: {{ name }}
@@ -35,7 +35,7 @@ requirements:
     # or native when not cross-compiling), and any source pre-processors.
     - {{ compiler('cxx') }}    # [not win]
     - {{ compiler('c') }}      # [not win]
-    - {{ compiler('clang') }}  # [win] 
+    - {{ compiler('clang') }}  # [win]
     - cmake
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
@@ -108,27 +108,29 @@ test:
   source_files:
     - tests/test_constants.py
     - tests/test_interface_spice.py
-    - tests/test_io.py
+    - tests/test_data.py
     - tests/test_hybrid_module_exposure.py
     - tests/test_time_conversions.py
     - tests/test_dependent_variable_dictionary.py
     - tests/test_data_mpc.py
     - tests/test_data_horizons.py
     - tests/test_data_biases.py
-    
+    - tests/test_data_weights.py
+
   commands:
     - pip install astroquery==0.4.8.dev9321
-    - python -c "from tudatpy.io import get_resource_path; print(get_resource_path())"
-    - python -c "from tudatpy.io import save2txt"
+    - python -c "from tudatpy.data import get_resource_path; print(get_resource_path())"
+    - python -c "from tudatpy.data import save2txt"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
     - python -m pytest -v tests/test_constants.py
-    - python -m pytest -v tests/test_io.py
+    - python -m pytest -v tests/test_data.py
     - python -m pytest -v tests/test_hybrid_module_exposure.py
     - python -m pytest -v tests/test_time_conversions.py
     - python -m pytest -v tests/test_dependent_variable_dictionary.py
-   # - python -m pytest -v tests/test_data_mpc.py
+    - python -m pytest -v tests/test_data_mpc.py
     - python -m pytest -v tests/test_data_horizons.py
     - python -m pytest -v tests/test_data_biases.py
+    - python -m pytest -v tests/test_data_weights.py
 about:
   home: https://tudat-space.readthedocs.io/
   license: BSD
