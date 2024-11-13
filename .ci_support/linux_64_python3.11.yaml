@@ -5,7 +5,7 @@ c_compiler:
 c_compiler_version:
 - '18'
 cdt_name:
-- cos7
+- conda
 channel_sources:
 - tudat-team/label/dev, tudat-team, conda-forge, defaults
 channel_targets:
