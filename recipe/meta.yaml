@@ -78,7 +78,8 @@ requirements:
     - astroquery
     - astropy
     - astropy-healpix
-
+    - tabulate
+    - colorama
 test:
   imports:
     - tudatpy
