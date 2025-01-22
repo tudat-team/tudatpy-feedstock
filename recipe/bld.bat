@@ -8,7 +8,7 @@ git checkout d159a563383d10c821ba7b2a71905d1207db6de4
 mkdir build
 cd build
 cmake ^
-    -G "Ninja" ^
+    -G "NMake Makefiles" ^
     -DPYBIND11_TEST=NO ^
     -DCMAKE_INSTALL_PREFIX=%TUDATPY_BUILD_DIR% ^
     -DCMAKE_PREFIX_PATH=%TUDATPY_BUILD_DIR% ^
