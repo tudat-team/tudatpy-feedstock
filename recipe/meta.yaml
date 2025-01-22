@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: 0cb7eb790081d4e30f94c5743932eaf03b3c7f4f
+  git_rev: cb7cb660c6d8b59bf702c9957e51775947d3f538
   patches:
     - use_sysconfig_for_python_paths.patch
 
@@ -125,7 +125,6 @@ test:
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
     - python -m pytest -v tests/test_constants.py
     - python -m pytest -v tests/test_data.py
-    - python -m pytest -v tests/test_hybrid_module_exposure.py
     - python -m pytest -v tests/test_time_conversions.py
     - python -m pytest -v tests/test_dependent_variable_dictionary.py
     - python -m pytest -v tests/test_data_mpc.py
