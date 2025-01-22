@@ -16,6 +16,10 @@ numpy:
   - 1.25.*
   - 1.25.*
   - 1.25.*
+is_python_min:
+  - 3.9
+  - 3.10
+  - 3.11  
 c_compiler:
   - clang
 c_compiler_version:
