@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: c96ef59129a561fa9dabbaa04682997adfdc55b7
+  git_rev: 06a3d6cec08b69159d83eb739570661e11ae70c8
   patches:
     - use_sysconfig_for_python_paths.patch
 
