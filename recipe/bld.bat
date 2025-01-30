@@ -8,13 +8,13 @@ git checkout d159a563383d10c821ba7b2a71905d1207db6de4
 mkdir build
 cd build
 cmake ^
-    -G "Ninja" ^
+    -G "NMake Makefiles" ^
     -DPYBIND11_TEST=NO ^
     -DCMAKE_INSTALL_PREFIX=%TUDATPY_BUILD_DIR% ^
     -DCMAKE_PREFIX_PATH=%TUDATPY_BUILD_DIR% ^
     -DCMAKE_BUILD_TYPE=Release ^
-    -DCMAKE_C_COMPILER=clang.exe ^
-    -DCMAKE_CXX_COMPILER=clang++.exe ^
+    -DCMAKE_C_COMPILER=cl.exe ^
+    -DCMAKE_CXX_COMPILER=cl.exe ^
     ..
 cmake --build . --target install
 cd ../..
@@ -28,9 +28,8 @@ cmake ^
     -DBoost_NO_BOOST_CMAKE=ON ^
     -DCMAKE_BUILD_TYPE=Release ^
     -Dpybind11_DIR=%TUDATPY_BUILD_DIR%\share\cmake\pybind11\ ^
-    -DCMAKE_CXX_FLAGS_RELEASE="-O2 -Wall -Wextra -Wno-macro-redefined -Wunused-parameter" ^
-    -DCMAKE_C_COMPILER=clang.exe ^
-    -DCMAKE_CXX_COMPILER=clang++.exe ^
+    -DCMAKE_C_COMPILER=cl.exe ^
+    -DCMAKE_CXX_COMPILER=cl.exe ^
     ..
 if errorlevel 1 exit 1
 cmake --build . --verbose --config Release --target install -- VERBOSE=1
