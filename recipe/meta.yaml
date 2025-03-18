@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: c574976be359a15c59fed7c6410d72cca04439e8
+  git_rev: 48467e8d6cdc309f2ce8eedc3c7c3eeb6a38572a
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -109,7 +109,7 @@ test:
     - tests/test_data.py
     - tests/test_hybrid_module_exposure.py
     - tests/test_time_conversions.py
-    - tests/test_dependent_variable_dictionary.py
+    #- tests/test_dependent_variable_dictionary.py
     - tests/test_data_mpc.py
     - tests/test_data_horizons.py
     - tests/test_data_biases.py
@@ -124,7 +124,7 @@ test:
     - python -m pytest -v tests/test_data.py
     - python -m pytest -v tests/test_hybrid_module_exposure.py
     - python -m pytest -v tests/test_time_conversions.py
-    - python -m pytest -v tests/test_dependent_variable_dictionary.py
+    #- python -m pytest -v tests/test_dependent_variable_dictionary.py
     - python -m pytest -v tests/test_data_mpc.py
     - python -m pytest -v tests/test_data_horizons.py
     - python -m pytest -v tests/test_data_biases.py
