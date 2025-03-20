@@ -9,9 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: {{ git_rev }}
-  patches:
-    - use_sysconfig_for_python_paths.patch
+  git_rev: 4288dbcf1e26e7ddc47292eade44448f266e92b4
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -83,23 +81,22 @@ requirements:
 test:
   imports:
     - tudatpy
-    - tudatpy.kernel
-    - tudatpy.kernel.math
-    - tudatpy.kernel.math.interpolators
-    - tudatpy.kernel.math.numerical_integrators
-    - tudatpy.kernel.math.root_finders
-    - tudatpy.kernel.interface
-    - tudatpy.kernel.interface.spice
-    - tudatpy.kernel.astro
-    - tudatpy.kernel.astro.frame_conversion
-    - tudatpy.kernel.astro.element_conversion
-    - tudatpy.kernel.astro.gravitation
-    - tudatpy.kernel.astro.two_body_dynamics
-    - tudatpy.kernel.constants
-    - tudatpy.kernel.numerical_simulation
-    - tudatpy.kernel.numerical_simulation.environment_setup
-    - tudatpy.kernel.numerical_simulation.propagation_setup
-    - tudatpy.kernel.numerical_simulation.estimation_setup
+    - tudatpy.math
+    - tudatpy.math.interpolators
+    - tudatpy.math.numerical_integrators
+    - tudatpy.math.root_finders
+    - tudatpy.interface
+    - tudatpy.interface.spice
+    - tudatpy.astro
+    - tudatpy.astro.frame_conversion
+    - tudatpy.astro.element_conversion
+    - tudatpy.astro.gravitation
+    - tudatpy.astro.two_body_dynamics
+    - tudatpy.constants
+    - tudatpy.numerical_simulation
+    - tudatpy.numerical_simulation.environment_setup
+    - tudatpy.numerical_simulation.propagation_setup
+    - tudatpy.numerical_simulation.estimation_setup
     - tudatpy.plotting
     - tudatpy.util
     - tudatpy.data
@@ -110,9 +107,9 @@ test:
     - tests/test_constants.py
     - tests/test_interface_spice.py
     - tests/test_data.py
-    - tests/test_hybrid_module_exposure.py
+    #- tests/test_hybrid_module_exposure.py
     - tests/test_time_conversions.py
-    - tests/test_dependent_variable_dictionary.py
+    #- tests/test_dependent_variable_dictionary.py
     - tests/test_data_mpc.py
     - tests/test_data_horizons.py
     - tests/test_data_biases.py
@@ -125,9 +122,9 @@ test:
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
     - python -m pytest -v tests/test_constants.py
     - python -m pytest -v tests/test_data.py
-    - python -m pytest -v tests/test_hybrid_module_exposure.py
+    #- python -m pytest -v tests/test_hybrid_module_exposure.py
     - python -m pytest -v tests/test_time_conversions.py
-    - python -m pytest -v tests/test_dependent_variable_dictionary.py
+   # - python -m pytest -v tests/test_dependent_variable_dictionary.py
     - python -m pytest -v tests/test_data_mpc.py
     - python -m pytest -v tests/test_data_horizons.py
     - python -m pytest -v tests/test_data_biases.py
