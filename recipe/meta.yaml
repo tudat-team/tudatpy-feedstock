@@ -80,6 +80,7 @@ requirements:
     - astropy-healpix
     - tabulate
     - colorama
+    - git
 test:
   imports:
     - tudatpy
