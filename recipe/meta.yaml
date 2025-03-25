@@ -28,9 +28,6 @@ build:
     - {{ pin_compatible('tudat-resources', max_pin='x.x') }}
     - {{ pin_compatible('nrlmsise-00', max_pin='x.x') }}
     - {{ pin_compatible('sofa-cmake', max_pin='x.x') }}
-  script: |
-    {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
-    {{ PYTHON }} -m pip install ./pytrk234 --no-deps --ignore-installed -vv
 
 requirements:
   build:
