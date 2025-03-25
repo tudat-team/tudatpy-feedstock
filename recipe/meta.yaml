@@ -12,7 +12,7 @@ source:
     git_rev: {{ git_rev }}
     patches:
     - use_sysconfig_for_python_paths.patch
-  - git_url: https://github.com/your-user/pytrk234.git
+  - git_url: https://github.com/NASA-PDS/PyTrk234.git
     folder: pytrk234
 
 build:
