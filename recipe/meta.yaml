@@ -8,10 +8,12 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: {{ git_rev }}
-  patches:
+  - git_url: https://github.com/tudat-team/tudatpy.git
+    git_rev: {{ git_rev }}
+    patches:
     - use_sysconfig_for_python_paths.patch
+  - git_url: https://github.com/your-user/pytrk234.git
+    folder: pytrk234
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -26,6 +28,9 @@ build:
     - {{ pin_compatible('tudat-resources', max_pin='x.x') }}
     - {{ pin_compatible('nrlmsise-00', max_pin='x.x') }}
     - {{ pin_compatible('sofa-cmake', max_pin='x.x') }}
+  script: |
+    {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+    {{ PYTHON }} -m pip install ./pytrk234 --no-deps --ignore-installed -vv
 
 requirements:
   build:
@@ -38,6 +43,7 @@ requirements:
     - {{ compiler('clang') }}  # [win]
     - cmake
     - python                                 # [build_platform != target_platform]
+    - pip                                    # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
@@ -80,7 +86,6 @@ requirements:
     - astropy-healpix
     - tabulate
     - colorama
-    - git
 test:
   imports:
     - tudatpy
@@ -118,6 +123,7 @@ test:
     - tests/test_data_horizons.py
     - tests/test_data_biases.py
     - tests/test_data_weights.py
+    - tests/test_processTrk234.py
 
   commands:
     - pip install astroquery==0.4.8.dev9321
@@ -133,6 +139,7 @@ test:
     - python -m pytest -v tests/test_data_horizons.py
     - python -m pytest -v tests/test_data_biases.py
     - python -m pytest -v tests/test_data_weights.py
+    - python -m pytest -v tests/test_processTrk234.py
 about:
   home: https://tudat-space.readthedocs.io/
   license: BSD
