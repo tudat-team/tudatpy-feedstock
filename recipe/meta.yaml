@@ -120,7 +120,7 @@ test:
     - tests/test_data_horizons.py
     - tests/test_data_biases.py
     - tests/test_data_weights.py
-    - tests/test_processTrk234.py
+    # - tests/test_processTrk234.py # Activate when feature/readd_trk234 branch is merged 
 
   commands:
     - pip install astroquery==0.4.8.dev9321
@@ -136,7 +136,7 @@ test:
     - python -m pytest -v tests/test_data_horizons.py
     - python -m pytest -v tests/test_data_biases.py
     - python -m pytest -v tests/test_data_weights.py
-    - python -m pytest -v tests/test_processTrk234.py
+    # - python -m pytest -v tests/test_processTrk234.py # Activate when feature/readd_trk234 branch is merged
 about:
   home: https://tudat-space.readthedocs.io/
   license: BSD
