@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: 37f1b4203050654e5088867b64b5c7da836b91df
+  git_rev: 15ba7758b710b1668eddca939bf5867bd1fc91d4
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -105,15 +105,16 @@ test:
     - pytest
   source_files:
     - tests/test_constants.py
-    - tests/test_interface_spice.py
-    - tests/test_data.py
-    - tests/test_perturbed_orbit.py
-    - tests/test_time_conversions.py
-    - tests/test_dependent_variable_dictionary.py
-    - tests/test_data_mpc.py
-    - tests/test_data_horizons.py
     - tests/test_data_biases.py
+    - tests/test_data_horizons.py
+    - tests/test_data_mpc.py
     - tests/test_data_weights.py
+    - tests/test_data.py
+    # - tests/test_dependent_variable_dictionary.py
+    - tests/test_dse_functions.py
+    - tests/test_imports.py
+    - tests/test_interface_spice.py
+    - tests/test_time_conversions.py
 
   commands:
     - pip install astroquery==0.4.8.dev9321
@@ -129,6 +130,8 @@ test:
     - python -m pytest -v tests/test_data_horizons.py
     - python -m pytest -v tests/test_data_biases.py
     - python -m pytest -v tests/test_data_weights.py
+    - python -m pytest -v tests/test_dse_functions.py
+    - python -m pytest -v tests/test_imports.py
 about:
   home: https://tudat-space.readthedocs.io/
   license: BSD
