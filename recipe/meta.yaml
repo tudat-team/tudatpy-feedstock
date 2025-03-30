@@ -115,6 +115,7 @@ test:
     - tests/test_imports.py
     - tests/test_interface_spice.py
     - tests/test_time_conversions.py
+    - tests/test_perturbed_orbit.py
 
   commands:
     - pip install astroquery==0.4.8.dev9321
