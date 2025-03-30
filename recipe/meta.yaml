@@ -78,6 +78,7 @@ requirements:
     - astropy-healpix
     - tabulate
     - colorama
+    - tqdm
 test:
   imports:
     - tudatpy
