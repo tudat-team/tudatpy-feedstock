@@ -31,3 +31,4 @@ stages:
     - template: ./.azure-pipelines/azure-pipelines-linux.yml
     - template: ./.azure-pipelines/azure-pipelines-osx.yml
     - template: ./.azure-pipelines/azure-pipelines-win.yml
+
