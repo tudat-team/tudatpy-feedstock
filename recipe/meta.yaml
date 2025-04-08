@@ -114,7 +114,7 @@ test:
     - tests/test_data_mpc.py
     - tests/test_data_weights.py
     - tests/test_data.py
-    # - tests/test_dependent_variable_dictionary.py
+    - tests/test_dependent_variable_dictionary.py
     - tests/test_dse_functions.py
     - tests/test_imports.py
     - tests/test_interface_spice.py
@@ -130,13 +130,13 @@ test:
     - python -m pytest -v tests/test_data.py
     # - python -m pytest -v tests/test_perturbed_orbit.py
     - python -m pytest -v tests/test_time_conversions.py
-    #- python -m pytest -v tests/test_dependent_variable_dictionary.py
+    - python -m pytest -v tests/test_dependent_variable_dictionary.py
     - python -m pytest -v tests/test_data_mpc.py
     - python -m pytest -v tests/test_data_horizons.py
     - python -m pytest -v tests/test_data_biases.py
     - python -m pytest -v tests/test_data_weights.py
     - python -m pytest -v tests/test_dse_functions.py
-    - python -m pytest -v tests/test_imports.py
+    # - python -m pytest -v tests/test_imports.py
 about:
   home: https://tudat-space.readthedocs.io/
   license: BSD
