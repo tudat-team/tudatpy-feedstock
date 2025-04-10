@@ -8,10 +8,12 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: {{ git_rev }}
-  patches:
+  - git_url: https://github.com/tudat-team/tudatpy.git
+    git_rev: {{ git_rev }}
+    patches:
     - use_sysconfig_for_python_paths.patch
+  - git_url: https://github.com/NASA-PDS/PyTrk234.git
+    folder: pytrk234
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -38,10 +40,10 @@ requirements:
     - {{ compiler('clang') }}  # [win]
     - cmake
     - python                                 # [build_platform != target_platform]
+    - pip                                    # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
-    - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
@@ -59,6 +61,7 @@ requirements:
     - nrlmsise-00
     - sofa-cmake
     - python
+    - pip
     - eigen
     - pybind11
     - mypy
@@ -117,6 +120,7 @@ test:
     - tests/test_data_horizons.py
     - tests/test_data_biases.py
     - tests/test_data_weights.py
+    # - tests/test_processTrk234.py # Activate when feature/readd_trk234 branch is merged 
 
   commands:
     - pip install astroquery==0.4.8.dev9321
@@ -132,6 +136,7 @@ test:
     - python -m pytest -v tests/test_data_horizons.py
     - python -m pytest -v tests/test_data_biases.py
     - python -m pytest -v tests/test_data_weights.py
+    # - python -m pytest -v tests/test_processTrk234.py # Activate when feature/readd_trk234 branch is merged
 about:
   home: https://tudat-space.readthedocs.io/
   license: BSD
