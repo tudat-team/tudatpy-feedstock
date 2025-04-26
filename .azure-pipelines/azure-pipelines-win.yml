@@ -10,15 +10,15 @@ jobs:
     matrix:
       win_64_python3.10:
         CONFIG: win_64_python3.10
-        UPLOAD_PACKAGES: 'True'
+        UPLOAD_PACKAGES: 'False'
         SHORT_CONFIG: win_64_python3.10
       win_64_python3.11:
         CONFIG: win_64_python3.11
-        UPLOAD_PACKAGES: 'True'
+        UPLOAD_PACKAGES: 'False'
         SHORT_CONFIG: win_64_python3.11
       win_64_python3.9:
         CONFIG: win_64_python3.9
-        UPLOAD_PACKAGES: 'True'
+        UPLOAD_PACKAGES: 'False'
         SHORT_CONFIG: win_64_python3.9
   timeoutInMinutes: 360
   variables:
