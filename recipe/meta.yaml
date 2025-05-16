@@ -10,7 +10,7 @@ package:
 source:
 
 - git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: 56b630a699cd992c3c8df13291bfeb6b4ad3ea2e
+  git_rev: 6a844dbd9ce831f71f2d613fbc1123dfdbe0a645
 - git_url: https://github.com/NASA-PDS/PyTrk234.git
   folder: pytrk234
 
