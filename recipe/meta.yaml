@@ -82,6 +82,7 @@ requirements:
     - tabulate
     - colorama
     - tqdm
+    - boost-cpp {{ boost_cpp }}
 
 test:
   imports:
