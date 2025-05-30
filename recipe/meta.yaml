@@ -60,6 +60,7 @@ requirements:
     - eigen
     - pybind11
     - mypy
+    - boost-cpp {{ boost_cpp }}
 
   run:
     # Packages required to run the package. These are the dependencies
