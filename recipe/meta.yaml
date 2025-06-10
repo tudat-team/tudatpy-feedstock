@@ -119,7 +119,7 @@ test:
     - tests/test_data_horizons.py
     - tests/test_data_mpc.py
     - tests/test_data_weights.py
-    - tests/test_processTrk234.py # Activate when feature/readd_trk234 branch is merged 
+    - tests/test_processTrk234.py
     - tests/test_data.py
     - tests/test_dependent_variable_dictionary.py
     - tests/test_dse_functions.py
@@ -142,7 +142,7 @@ test:
     - python -m pytest -v tests/test_data_horizons.py
     - python -m pytest -v tests/test_data_biases.py
     - python -m pytest -v tests/test_data_weights.py
-    - python -m pytest -v tests/test_processTrk234.py # Activate when feature/readd_trk234 branch is merged
+    - python -m pytest -v tests/test_processTrk234.py
     - python -m pytest -v tests/test_dse_functions.py
     # - python -m pytest -v tests/test_imports.py
 about:
