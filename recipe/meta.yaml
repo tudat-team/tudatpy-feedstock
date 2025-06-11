@@ -10,7 +10,7 @@ package:
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
   # git_rev: {{ git_rev }}
-  git_rev: e7627b0ba9899872b87b68dc492b64e613099d70
+  git_rev: b0bebeecb013e56609ae4db283f2393838bd84df
 
 
 build:
