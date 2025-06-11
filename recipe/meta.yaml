@@ -85,8 +85,6 @@ requirements:
     - colorama
     - tqdm
     - boost-cpp {{ boost_cpp }}
-    - pip:
-      - git+https://github.com/NASA-PDS/PyTrk234.git
 
 
 test:
