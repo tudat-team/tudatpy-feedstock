@@ -86,7 +86,6 @@ requirements:
     - tqdm
     - boost-cpp {{ boost_cpp }}
 
-
 test:
   imports:
     - tudatpy
