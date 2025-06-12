@@ -24,3 +24,8 @@ make
 
 make install
 
+# Go back to source root to install pytrk234
+echo "Installing pytrk234..."
+$PYTHON -m pip install git+https://github.com/NASA-PDS/PyTrk234.git --no-deps -vv
+
+

@@ -36,10 +36,10 @@ requirements:
     - {{ compiler('clang') }}  # [win]
     - cmake
     - python                                 # [build_platform != target_platform]
+    - pip                                    # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
-    - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
@@ -57,6 +57,7 @@ requirements:
     - nrlmsise-00
     - sofa-cmake
     - python
+    - pip
     - eigen
     - pybind11
     - mypy
@@ -115,6 +116,7 @@ test:
     - tests/test_data_horizons.py
     - tests/test_data_mpc.py
     - tests/test_data_weights.py
+    - tests/test_processTrk234.py
     - tests/test_data.py
     - tests/test_dependent_variable_dictionary.py
     - tests/test_dse_functions.py
@@ -137,6 +139,7 @@ test:
     - python -m pytest -v tests/test_data_horizons.py
     - python -m pytest -v tests/test_data_biases.py
     - python -m pytest -v tests/test_data_weights.py
+    - python -m pytest -v tests/test_processTrk234.py
     - python -m pytest -v tests/test_dse_functions.py
     # - python -m pytest -v tests/test_imports.py
 about:
