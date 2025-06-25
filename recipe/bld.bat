@@ -8,7 +8,6 @@ git checkout d159a563383d10c821ba7b2a71905d1207db6de4
 mkdir build
 cd build
 cmake ^
-    -G "NMake Makefiles" ^
     -DPYBIND11_TEST=NO ^
     -DCMAKE_INSTALL_PREFIX=%TUDATPY_BUILD_DIR% ^
     -DCMAKE_PREFIX_PATH=%TUDATPY_BUILD_DIR% ^
@@ -20,7 +19,6 @@ cmake --build . --target install
 cd ../..
 
 cmake ^
-    -G "NMake Makefiles" ^
     -DCMAKE_CXX_STANDARD=17 ^
     -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
