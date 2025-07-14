@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: {{ git_rev }}
+  git_rev: 4dedd66450e11a1f47237bb51a5924094730076b
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -51,7 +51,6 @@ requirements:
     # Packages that need to be specific to the target platform when the
     # target platform is not necessarily the same as the native build
     # platform
-    - tudat
     - tudat-resources
     - cspice-cmake
     - nrlmsise-00
@@ -111,18 +110,18 @@ test:
   requires:
     - pytest
   source_files:
-    - tests/test_constants.py
-    - tests/test_data_biases.py
-    - tests/test_data_horizons.py
-    - tests/test_data_mpc.py
-    - tests/test_data_weights.py
-    - tests/test_processTrk234.py
-    - tests/test_data.py
-    - tests/test_dependent_variable_dictionary.py
-    - tests/test_dse_functions.py
+    - tests/tudatpy/test_constants.py
+    - tests/tudatpy/test_data_biases.py
+    - tests/tudatpy/test_data_horizons.py
+    - tests/tudatpy/test_data_mpc.py
+    - tests/tudatpy/test_data_weights.py
+    - tests/tudatpy/test_processTrk234.py
+    - tests/tudatpy/test_data.py
+    - tests/tudatpy/test_dependent_variable_dictionary.py
+    - tests/tudatpy/test_dse_functions.py
    # - tests/test_imports.py
-    - tests/test_interface_spice.py
-    - tests/test_time_conversions.py
+    - tests/tudatpy/test_interface_spice.py
+    - tests/tudatpy/test_time_conversions.py
     # - tests/test_perturbed_orbit.py
 
   commands:

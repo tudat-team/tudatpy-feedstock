@@ -17,6 +17,7 @@ cmake \
     -DCMAKE_CXX_STANDARD=14 \
     -DTUDATPY_CONDA_BUILD=on \
     -D_GLIBCXX_USE_CXX11_ABI=1 \
+    -DTUDAT_BUILD_TESTS=OFF \
     -DCMAKE_CXX_FLAGS_RELEASE="-Wno-macro-redefined -Wunused-parameter" \
     ..
 
