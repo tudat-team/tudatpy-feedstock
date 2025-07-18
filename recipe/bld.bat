@@ -14,7 +14,7 @@ cmake ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DCMAKE_C_COMPILER=clang.exe ^
     -DCMAKE_CXX_COMPILER=clang++.exe ^
-    -DTUDAT_BUILD_TESTS=OFF ^
+    -DTUDAT_BUILD_TESTS=ON ^
     ..
 cmake --build . --target install
 cd ../..
@@ -29,10 +29,13 @@ cmake ^
     -Dpybind11_DIR=%TUDATPY_BUILD_DIR%\share\cmake\pybind11\ ^
     -DCMAKE_C_COMPILER=clang.exe ^
     -DCMAKE_CXX_COMPILER=clang++.exe ^
-    -DTUDAT_BUILD_TESTS=OFF ^
+    -DTUDAT_BUILD_TESTS=ON ^
     ..
 if errorlevel 1 exit 1
 cmake --build . --verbose --config Release --target install -- VERBOSE=1
 if errorlevel 1 exit 1
-ctest --verbose
+if %BUILD_TESTS%==1 (
+    ctest --verbose
+    if errorlevel 1 exit 1
+)
 if errorlevel 1 exit 1
