@@ -2,20 +2,6 @@ mkdir build
 cd build
 SET TUDATPY_BUILD_DIR=%cd%
 
-mkdir build
-cd build
-cmake ^
-    -DPYBIND11_TEST=NO ^
-    -DCMAKE_INSTALL_PREFIX=%TUDATPY_BUILD_DIR% ^
-    -DCMAKE_PREFIX_PATH=%TUDATPY_BUILD_DIR% ^
-    -DCMAKE_BUILD_TYPE=Release ^
-    -DCMAKE_C_COMPILER=clang.exe ^
-    -DCMAKE_CXX_COMPILER=clang++.exe ^
-    -DTUDAT_BUILD_TESTS=OFF ^
-    ..
-cmake --build . --target install
-cd ../..
-
 cmake ^
     -DCMAKE_CXX_STANDARD=17 ^
     -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
