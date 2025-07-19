@@ -15,7 +15,7 @@ cmake ^
     -DTUDAT_BUILD_TESTS=OFF ^
     ..
 if errorlevel 1 exit 1
-cmake --build . --verbose --config Release --target install 
+cmake --build . --verbose --config Release --target install -- /m:1
 if errorlevel 1 exit 1
 if %BUILD_TESTS%==1 (
     ctest --verbose
