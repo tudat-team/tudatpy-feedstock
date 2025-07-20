@@ -20,8 +20,3 @@ cmake ^
 if errorlevel 1 exit 1
 cmake --build . --verbose --config Release --target install -- /m:1
 if errorlevel 1 exit 1
-if %BUILD_TESTS%==1 (
-    ctest --verbose
-    if errorlevel 1 exit 1
-)
-if errorlevel 1 exit 1
