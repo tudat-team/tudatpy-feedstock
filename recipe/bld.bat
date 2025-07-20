@@ -5,7 +5,7 @@ SET TUDATPY_BUILD_DIR=%cd%
 REM Force MSVC to compile using a single thread (no parallel file compilation)
 
 
-cmake ^
+cmake -G Ninja ^
     -DCMAKE_CXX_STANDARD=17 ^
     -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
