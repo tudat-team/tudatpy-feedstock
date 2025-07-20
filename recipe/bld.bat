@@ -3,7 +3,7 @@ cd build
 SET TUDATPY_BUILD_DIR=%cd%
 
 REM Force MSVC to compile using a single thread (no parallel file compilation)
-set CL=/MP1 /Zm500
+
 
 cmake ^
     -DCMAKE_CXX_STANDARD=17 ^
@@ -13,8 +13,8 @@ cmake ^
     -DBoost_NO_BOOST_CMAKE=ON ^
     -DCMAKE_BUILD_TYPE=Release ^
     -Dpybind11_DIR=%TUDATPY_BUILD_DIR%\share\cmake\pybind11\ ^
-    -DCMAKE_C_COMPILER=cl.exe ^
-    -DCMAKE_CXX_COMPILER=cl.exe ^
+    -DCMAKE_C_COMPILER=clang.exe ^
+    -DCMAKE_CXX_COMPILER=clang++.exe ^
     -DTUDAT_BUILD_TESTS=OFF ^
     ..
 if errorlevel 1 exit 1
