@@ -18,7 +18,7 @@ cmake -G Ninja ^
     -DTUDAT_BUILD_TESTS=OFF ^
     ..
 if errorlevel 1 exit 1
-cmake --build . --verbose --config Release --target install 
+cmake --build . --config Release --target install -j1
 if errorlevel 1 exit 1
 
 REM Go back to source root to install pytrk234
