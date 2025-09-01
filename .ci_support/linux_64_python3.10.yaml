@@ -7,7 +7,7 @@ c_compiler_version:
 cdt_name:
 - conda
 channel_sources:
-- tudat-team/label/dev, tudat-team, conda-forge, defaults
+- tudat-team/label/test, tudat-team, conda-forge, defaults
 channel_targets:
 - tudat-team dev
 cxx_compiler:
