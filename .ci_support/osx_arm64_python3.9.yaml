@@ -11,7 +11,7 @@ c_compiler_version:
 channel_sources:
 - tudat-team/label/test, tudat-team, conda-forge, defaults
 channel_targets:
-- tudat-team dev
+- tudat-team test
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
