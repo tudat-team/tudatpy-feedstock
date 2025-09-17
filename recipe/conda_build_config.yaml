@@ -5,9 +5,10 @@ channel_sources:
 boost_cpp:
   - 1.84.0
 python:
-  - 3.9
   - 3.10
   - 3.11
+  - 3.12
+  - 3.13
 python_impl:
   - cpython
   - cpython
@@ -17,9 +18,10 @@ numpy:
   - 1.25.*
   - 1.25.*
 is_python_min:
-  - 3.9
   - 3.10
-  - 3.11  
+  - 3.11
+  - 3.12
+  - 3.13
 c_compiler:
   - clang
 c_compiler_version:
