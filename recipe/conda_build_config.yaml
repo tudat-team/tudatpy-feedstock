@@ -13,9 +13,9 @@ python_impl:
   - cpython
   - cpython
 numpy:
-  - 1.26.*
-  - 1.26.*
-  - 1.26.*
+  - 1.25.*
+  - 1.25.*
+  - 1.25.*
 is_python_min:
   - 3.10
   - 3.11
