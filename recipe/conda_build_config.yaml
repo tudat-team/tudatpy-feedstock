@@ -8,7 +8,6 @@ python:
   - 3.10
   - 3.11
   - 3.12
-  - 3.13
 python_impl:
   - cpython
   - cpython
@@ -21,7 +20,6 @@ is_python_min:
   - 3.10
   - 3.11
   - 3.12
-  - 3.13
 c_compiler:
   - clang
 c_compiler_version:
