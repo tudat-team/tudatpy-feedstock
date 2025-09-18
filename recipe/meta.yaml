@@ -45,7 +45,6 @@ requirements:
     - pybind11                               # [build_platform != target_platform]
     - make    # [unix]
     - boost-cpp {{ boost_cpp }}
-    - pygmo
 
   host:
     # Packages that need to be specific to the target platform when the
@@ -61,7 +60,6 @@ requirements:
     - pybind11
     - mypy
     - boost-cpp {{ boost_cpp }}
-    - pygmo
 
   run:
     # Packages required to run the package. These are the dependencies
