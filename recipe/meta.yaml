@@ -73,6 +73,10 @@ requirements:
     - astropy-healpix
     - colorama
     - tqdm
+    - nrlmsise-00
+    - cspice-cmake
+    - sofa-cmake
+    - tudat-resources
 
 test:
   imports:
