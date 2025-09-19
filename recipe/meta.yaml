@@ -73,6 +73,8 @@ requirements:
     - astropy-healpix
     - colorama
     - tqdm
+    - boost-cpp {{ boost_cpp }}
+
 
 test:
   imports:
