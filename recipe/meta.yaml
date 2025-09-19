@@ -61,12 +61,12 @@ requirements:
 
   run:
     # Python libraries needed at runtime
-    - { { pin_compatible('numpy') } }
-    - { { pin_compatible('pandas') } }
-    - { { pin_compatible('scipy') } }
-    - { { pin_compatible('spiceypy') } }
-    - { { pin_compatible('tabulate') } }
-    - { { pin_compatible('matplotlib') } }
+    - {{ pin_compatible('numpy') }}
+    - {{ pin_compatible('pandas') }}
+    - {{ pin_compatible('scipy') }}
+    - {{ pin_compatible('spiceypy') }}
+    - {{ pin_compatible('tabulate') }}
+    - {{ pin_compatible('matplotlib') }}
     - python
     - astroquery
     - astropy
