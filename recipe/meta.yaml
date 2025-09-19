@@ -41,7 +41,7 @@ requirements:
     - pip           # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - numpy         # [build_platform != target_platform]
-    - pybind11 <3.0 # [build_platform != target_platform]
+    - "pybind11 <3.0" # [build_platform != target_platform]
 
     # Boost needed at build for linking
     - boost-cpp {{ boost_cpp }}
@@ -55,7 +55,7 @@ requirements:
     - python
     - pip
     - eigen
-    - pybind11 <3.0
+    - "pybind11 <3.0"
     - boost-cpp {{ boost_cpp }}
     - {{ pin_compatible('numpy') }}
 
