@@ -1,5 +1,5 @@
 {% set name = "tudatpy" %}
-  {% set version = "0.9.0.dev120" %}
+  {% set version = "1.0.0.dev0" %}
   {% set build = "0" %}
   {% set git_rev = "v" + version %}
 
@@ -24,34 +24,30 @@ build:
     - {{ pin_compatible('tudat-resources', max_pin='x.x') }}
     - {{ pin_compatible('nrlmsise-00', max_pin='x.x') }}
     - {{ pin_compatible('sofa-cmake', max_pin='x.x') }}
+    - {{ pin_compatible('boost-cpp', max_pin='x.x') }}
+
 
 requirements:
   build:
-    # Tools required to build the package. These packages are run on the build
-    # system and include things such as revision control systems (Git, SVN) make
-    # tools (GNU make, Autotool, CMake) and compilers (real cross, pseudo-cross,
-    # or native when not cross-compiling), and any source pre-processors.
+    # Compilers and build tools
     - {{ compiler('cxx') }}    # [not win]
     - {{ compiler('c') }}      # [not win]
     - {{ compiler('clang') }}  # [win]
     - cmake
-    - python                                 # [build_platform != target_platform]
-    - pip                                    # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
-    - pybind11<3.0                           # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
-    - pybind11<3.0                           # [build_platform != target_platform]
-    - make    # [unix]
+    - make  # [unix]
+
+    # Cross-compilation helpers (only needed when build != host platform)
+    - python        # [build_platform != target_platform]
+    - pip           # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+    - numpy         # [build_platform != target_platform]
+    - pybind11 # [build_platform != target_platform]
+
+    # Boost needed at build for linking
     - boost-cpp {{ boost_cpp }}
 
-
   host:
-    # Packages that need to be specific to the target platform when the
-    # target platform is not necessarily the same as the native build
-    # platform
-    - tudat
+    # Libraries we compile/link against (target platform)
     - tudat-resources
     - cspice-cmake
     - nrlmsise-00
@@ -59,30 +55,28 @@ requirements:
     - python
     - pip
     - eigen
-    - pybind11<3.0
-    - mypy
+    - pybind11
     - boost-cpp {{ boost_cpp }}
+    - {{ pin_compatible('numpy') }}
 
   run:
-    # Packages required to run the package. These are the dependencies
-    # that are installed automatically whenever the package is installed.
-    # Package names should follow the package match specifications.
+    # Python libraries needed at runtime
     - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('pandas') }}
     - {{ pin_compatible('scipy') }}
     - {{ pin_compatible('spiceypy') }}
     - {{ pin_compatible('tabulate') }}
-    - {{ pin_compatible('tudat') }}
-    - {{ pin_compatible('pybind11', max_pin='x.x') }}
     - {{ pin_compatible('matplotlib') }}
-    - pip
     - python
     - astroquery
     - astropy
     - astropy-healpix
-    - tabulate
     - colorama
     - tqdm
+    - nrlmsise-00
+    - cspice-cmake
+    - sofa-cmake
+    - tudat-resources
     - boost-cpp {{ boost_cpp }}
 
 test:
@@ -111,18 +105,18 @@ test:
   requires:
     - pytest
   source_files:
-    - tests/test_constants.py
-    - tests/test_data_biases.py
-    - tests/test_data_horizons.py
-    - tests/test_data_mpc.py
-    - tests/test_data_weights.py
-    - tests/test_processTrk234.py
-    - tests/test_data.py
-    - tests/test_dependent_variable_dictionary.py
-    - tests/test_dse_functions.py
+    - tests/test_tudatpy/test_constants.py
+    - tests/test_tudatpy/test_data_biases.py
+    - tests/test_tudatpy/test_data_horizons.py
+    - tests/test_tudatpy/test_data_mpc.py
+    - tests/test_tudatpy/test_data_weights.py
+    - tests/test_tudatpy/test_processTrk234.py
+    - tests/test_tudatpy/test_data.py
+    - tests/test_tudatpy/test_dependent_variable_dictionary.py
+    - tests/test_tudatpy/test_dse_functions.py
+    - tests/test_tudatpy/test_interface_spice.py
+    - tests/test_tudatpy/test_time_conversions.py
    # - tests/test_imports.py
-    - tests/test_interface_spice.py
-    - tests/test_time_conversions.py
     # - tests/test_perturbed_orbit.py
 
   commands:
@@ -130,17 +124,17 @@ test:
     - python -c "from tudatpy.data import get_resource_path; print(get_resource_path())"
     - python -c "from tudatpy.data import save2txt"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
-    - python -m pytest -v tests/test_constants.py
-    - python -m pytest -v tests/test_data.py
+    - python -m pytest -v tests/test_tudatpy/test_constants.py
+    - python -m pytest -v tests/test_tudatpy/test_data.py
+    - python -m pytest -v tests/test_tudatpy/test_time_conversions.py
+    - python -m pytest -v tests/test_tudatpy/test_dependent_variable_dictionary.py
+    - python -m pytest -v tests/test_tudatpy/test_data_mpc.py
+    - python -m pytest -v tests/test_tudatpy/test_data_horizons.py
+    - python -m pytest -v tests/test_tudatpy/test_data_biases.py
+    - python -m pytest -v tests/test_tudatpy/test_data_weights.py
+    - python -m pytest -v tests/test_tudatpy/test_processTrk234.py
+    - python -m pytest -v tests/test_tudatpy/test_dse_functions.py
     # - python -m pytest -v tests/test_perturbed_orbit.py
-    - python -m pytest -v tests/test_time_conversions.py
-    - python -m pytest -v tests/test_dependent_variable_dictionary.py
-    - python -m pytest -v tests/test_data_mpc.py
-    - python -m pytest -v tests/test_data_horizons.py
-    - python -m pytest -v tests/test_data_biases.py
-    - python -m pytest -v tests/test_data_weights.py
-    - python -m pytest -v tests/test_processTrk234.py
-    - python -m pytest -v tests/test_dse_functions.py
     # - python -m pytest -v tests/test_imports.py
 about:
   home: https://tudat-space.readthedocs.io/
