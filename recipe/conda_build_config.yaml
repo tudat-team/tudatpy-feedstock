@@ -1,7 +1,7 @@
 channel_targets:
-  - tudat-team dev
+  - tudat-team main
 channel_sources:
-  - tudat-team/label/dev, tudat-team, conda-forge, defaults
+  - tudat-team, tudat-team, conda-forge, defaults
 boost_cpp:
   - 1.84.0
 python:
