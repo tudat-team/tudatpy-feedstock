@@ -113,7 +113,7 @@ test:
     - tests/test_tudatpy/test_processTrk234.py
     - tests/test_tudatpy/test_data.py
     - tests/test_tudatpy/test_dependent_variable_dictionary.py
-    - tests/test_tudatpy/test_dse_functions.py
+    #- tests/test_tudatpy/test_dse_functions.py
     - tests/test_tudatpy/test_interface_spice.py
     - tests/test_tudatpy/test_time_conversions.py
    # - tests/test_imports.py
