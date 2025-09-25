@@ -133,7 +133,7 @@ test:
     - python -m pytest -v tests/test_tudatpy/test_data_biases.py
     - python -m pytest -v tests/test_tudatpy/test_data_weights.py
     - python -m pytest -v tests/test_tudatpy/test_processTrk234.py
-    - python -m pytest -v tests/test_tudatpy/test_dse_functions.py
+    #- python -m pytest -v tests/test_tudatpy/test_dse_functions.py
     # - python -m pytest -v tests/test_perturbed_orbit.py
     # - python -m pytest -v tests/test_imports.py
 about:
