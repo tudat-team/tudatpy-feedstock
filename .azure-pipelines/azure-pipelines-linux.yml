@@ -10,17 +10,17 @@ jobs:
     matrix:
       linux_64_python3.10:
         CONFIG: linux_64_python3.10
-        UPLOAD_PACKAGES: 'True'
+        UPLOAD_PACKAGES: 'False'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
         SHORT_CONFIG: linux_64_python3.10
       linux_64_python3.11:
         CONFIG: linux_64_python3.11
-        UPLOAD_PACKAGES: 'True'
+        UPLOAD_PACKAGES: 'False'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
         SHORT_CONFIG: linux_64_python3.11
       linux_64_python3.12:
         CONFIG: linux_64_python3.12
-        UPLOAD_PACKAGES: 'True'
+        UPLOAD_PACKAGES: 'False'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
         SHORT_CONFIG: linux_64_python3.12
   timeoutInMinutes: 360
