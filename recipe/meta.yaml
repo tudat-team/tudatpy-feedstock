@@ -1,6 +1,6 @@
 {% set name = "tudatpy" %}
   {% set version = "1.0.0" %}
-  {% set build = "1" %}
+  {% set build = "2" %}
   {% set git_rev = "v" + version %}
 
 package:
@@ -98,6 +98,7 @@ test:
     - tudatpy.numerical_simulation.environment_setup
     - tudatpy.numerical_simulation.propagation_setup
     - tudatpy.numerical_simulation.estimation_setup
+    - tudatpy.numerical_simulation.estimation
     - tudatpy.plotting
     - tudatpy.util
     - tudatpy.data
