@@ -98,6 +98,7 @@ test:
     - tudatpy.numerical_simulation.environment_setup
     - tudatpy.numerical_simulation.propagation_setup
     - tudatpy.numerical_simulation.estimation_setup
+    - tudatpy.numerical_simulation.estimation
     - tudatpy.plotting
     - tudatpy.util
     - tudatpy.data
@@ -113,7 +114,7 @@ test:
     - tests/test_tudatpy/test_processTrk234.py
     - tests/test_tudatpy/test_data.py
     - tests/test_tudatpy/test_dependent_variable_dictionary.py
-    #- tests/test_tudatpy/test_dse_functions.py
+    - tests/test_tudatpy/test_dse_functions.py
     - tests/test_tudatpy/test_interface_spice.py
     - tests/test_tudatpy/test_time_conversions.py
    # - tests/test_imports.py
@@ -133,7 +134,7 @@ test:
     - python -m pytest -v tests/test_tudatpy/test_data_biases.py
     - python -m pytest -v tests/test_tudatpy/test_data_weights.py
     - python -m pytest -v tests/test_tudatpy/test_processTrk234.py
-    #- python -m pytest -v tests/test_tudatpy/test_dse_functions.py
+    - python -m pytest -v tests/test_tudatpy/test_dse_functions.py
     # - python -m pytest -v tests/test_perturbed_orbit.py
     # - python -m pytest -v tests/test_imports.py
 about:
