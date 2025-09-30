@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: 0dc4a6335dc0f191c95b768af90cf18435509f50
+  git_rev: ddc7bc851a972f558b686a926fcff84ed0cc197a
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -20,7 +20,7 @@ build:
   #  added to a repository.
   number: {{ build }}
   run_exports:
-    - {{ pin_compatible('cspice-cmake', max_pin='x.x') }}
+    - {{ pin_compatible('cspice', max_pin='x.x') }}
     - {{ pin_compatible('tudat-resources', max_pin='x.x') }}
     - {{ pin_compatible('nrlmsise-00', max_pin='x.x') }}
     - {{ pin_compatible('sofa-cmake', max_pin='x.x') }}
@@ -49,7 +49,7 @@ requirements:
   host:
     # Libraries we compile/link against (target platform)
     - tudat-resources
-    - cspice-cmake
+    - cspice
     - nrlmsise-00
     - sofa-cmake
     - python
@@ -74,7 +74,7 @@ requirements:
     - colorama
     - tqdm
     - nrlmsise-00
-    - cspice-cmake
+    - cspice
     - sofa-cmake
     - tudat-resources
     - boost-cpp {{ boost_cpp }}
