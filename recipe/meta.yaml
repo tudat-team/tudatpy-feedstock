@@ -8,8 +8,8 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/tudat-team/tudatpy.git
-  git_rev: ddc7bc851a972f558b686a926fcff84ed0cc197a
+  git_url: https://github.com/PascalChristiaanse/tudat_UTAS.git
+  git_rev: d0a91f052a6a082d159900c703a7db10515c5dc4
 
 build:
   # A non-negative integer representing the build number of the package.
