@@ -1,5 +1,5 @@
 {% set name = "tudatpy" %}
-  {% set version = "1.0.0.dev0" %}
+  {% set version = "1.0.0.dev46" %}
   {% set build = "0" %}
   {% set git_rev = "v" + version %}
 
@@ -8,8 +8,8 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/PascalChristiaanse/tudat_UTAS.git
-  git_rev: d0a91f052a6a082d159900c703a7db10515c5dc4
+  git_url: https://github.com/tudat-team/tudatpy.git
+  git_rev: d92e54c43cb50c41efe851e584021494115808b6
 
 build:
   # A non-negative integer representing the build number of the package.
@@ -98,6 +98,7 @@ test:
     - tudatpy.numerical_simulation.environment_setup
     - tudatpy.numerical_simulation.propagation_setup
     - tudatpy.numerical_simulation.estimation_setup
+    - tudatpy.numerical_simulation.estimation
     - tudatpy.plotting
     - tudatpy.util
     - tudatpy.data

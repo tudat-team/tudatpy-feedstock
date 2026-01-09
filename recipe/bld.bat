@@ -6,7 +6,7 @@ REM Force MSVC to compile using a single thread (no parallel file compilation)
 
 
 cmake -G Ninja ^
-    -DCMAKE_CXX_STANDARD=23 ^
+    -DCMAKE_CXX_STANDARD=17 ^
     -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -D_ENABLE_EXTENDED_ALIGNED_STORAGE=on ^
