@@ -27,13 +27,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.10</td>
-              <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.10" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>linux_64_python3.11</td>
               <td>
                 <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
@@ -48,10 +41,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_python3.10</td>
+              <td>linux_64_python3.13</td>
               <td>
                 <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.10" alt="variant">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.13" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_python3.14</td>
+              <td>
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.14" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -69,10 +69,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_python3.10</td>
+              <td>osx_64_python3.13</td>
               <td>
                 <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.10" alt="variant">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.13" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.14</td>
+              <td>
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.14" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -90,10 +97,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_python3.10</td>
+              <td>osx_arm64_python3.13</td>
               <td>
                 <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.10" alt="variant">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.13" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_python3.14</td>
+              <td>
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.14" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -108,6 +122,20 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
                   <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.12" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.13</td>
+              <td>
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.13" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.14</td>
+              <td>
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.14" alt="variant">
                 </a>
               </td>
             </tr>
@@ -128,14 +156,14 @@ Current release info
 Installing tudatpy
 ==================
 
-Installing `tudatpy` from the `tudat-team/label/dev` channel can be achieved by adding `tudat-team/label/dev` to your channels with:
+Installing `tudatpy` from the `tudat-team/label/test` channel can be achieved by adding `tudat-team/label/test` to your channels with:
 
 ```
-conda config --add channels tudat-team/label/dev
+conda config --add channels tudat-team/label/test
 conda config --set channel_priority strict
 ```
 
-Once the `tudat-team/label/dev` channel has been enabled, `tudatpy` can be installed with `conda`:
+Once the `tudat-team/label/test` channel has been enabled, `tudatpy` can be installed with `conda`:
 
 ```
 conda install tudatpy
@@ -150,26 +178,26 @@ mamba install tudatpy
 It is possible to list all of the versions of `tudatpy` available on your platform with `conda`:
 
 ```
-conda search tudatpy --channel tudat-team/label/dev
+conda search tudatpy --channel tudat-team/label/test
 ```
 
 or with `mamba`:
 
 ```
-mamba search tudatpy --channel tudat-team/label/dev
+mamba search tudatpy --channel tudat-team/label/test
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search tudatpy --channel tudat-team/label/dev
+mamba repoquery search tudatpy --channel tudat-team/label/test
 
 # List packages depending on `tudatpy`:
-mamba repoquery whoneeds tudatpy --channel tudat-team/label/dev
+mamba repoquery whoneeds tudatpy --channel tudat-team/label/test
 
 # List dependencies of `tudatpy`:
-mamba repoquery depends tudatpy --channel tudat-team/label/dev
+mamba repoquery depends tudatpy --channel tudat-team/label/test
 ```
 
 
