@@ -4,8 +4,6 @@ c_compiler:
 - clang
 c_compiler_version:
 - '18'
-cdt_name:
-- conda
 channel_sources:
 - tudat-team/label/test, tudat-team, conda-forge, defaults
 channel_targets:
