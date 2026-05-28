@@ -5,7 +5,7 @@
 
 package:
   name: {{ name }}
-  version: numpy-test
+  version: 0
 
 source:
   git_url: https://github.com/tudat-team/tudatpy.git
