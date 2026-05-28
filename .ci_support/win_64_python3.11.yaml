@@ -1,9 +1,9 @@
 boost_cpp:
 - 1.84.0
 channel_sources:
-- tudat-team/label/test, tudat-team, conda-forge, defaults
+- tudat-team/label/dev, tudat-team, conda-forge, defaults
 channel_targets:
-- tudat-team test
+- tudat-team dev
 clang_compiler:
 - clang-cl
 clang_compiler_version:

@@ -4,6 +4,7 @@ SET TUDATPY_BUILD_DIR=%cd%
 
 REM Force MSVC to compile using a single thread (no parallel file compilation)
 
+
 cmake -G Ninja ^
     -DCMAKE_CXX_STANDARD=17 ^
     -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
@@ -25,6 +26,6 @@ if errorlevel 1 exit 1
 
 REM Go back to source root to install pytrk234
 echo Installing pytrk234...
-call %PYTHON% -m pip install git+https://github.com/NASA-PDS/PyTrk234.git --no-deps --no-build-isolation -vv
+call %PYTHON% -m pip install git+https://github.com/NASA-PDS/PyTrk234.git --no-deps -vv
 
 if errorlevel 1 exit 1
