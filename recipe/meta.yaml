@@ -54,9 +54,6 @@ requirements:
     - sofa-cmake
     - python
     - pip
-    - setuptools
-    - setuptools-scm
-    - wheel
     - eigen
     - pybind11
     - boost-cpp {{ boost_cpp }}
