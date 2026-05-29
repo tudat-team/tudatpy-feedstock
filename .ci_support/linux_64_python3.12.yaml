@@ -4,8 +4,6 @@ c_compiler:
 - clang
 c_compiler_version:
 - '18'
-cdt_name:
-- conda
 channel_sources:
 - tudat-team/label/dev, tudat-team, conda-forge, defaults
 channel_targets:
@@ -17,7 +15,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 numpy:
-- 1.26.*
+- 2.4.*
 pin_run_as_build:
   python:
     min_pin: x.x

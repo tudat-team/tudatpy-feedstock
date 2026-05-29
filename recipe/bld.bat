@@ -13,8 +13,11 @@ cmake -G Ninja ^
     -DBoost_NO_BOOST_CMAKE=ON ^
     -DCMAKE_BUILD_TYPE=Release ^
     -Dpybind11_DIR=%TUDATPY_BUILD_DIR%\share\cmake\pybind11\ ^
-    -DCMAKE_C_COMPILER=clang.exe ^
-    -DCMAKE_CXX_COMPILER=clang++.exe ^
+    -DCMAKE_C_COMPILER=%CC% ^
+    -DCMAKE_CXX_COMPILER=%CXX% ^
+    -DPython_EXECUTABLE=%PYTHON% ^
+    -DPython_ROOT_DIR=%PREFIX% ^
+    -DPython_FIND_REGISTRY=NEVER ^
     -DTUDAT_BUILD_TESTS=OFF ^
     ..
 if errorlevel 1 exit 1
@@ -23,6 +26,6 @@ if errorlevel 1 exit 1
 
 REM Go back to source root to install pytrk234
 echo Installing pytrk234...
-call %PYTHON% -m pip install git+https://github.com/NASA-PDS/PyTrk234.git --no-deps -vv
+call %PYTHON% -m pip install git+https://github.com/NASA-PDS/PyTrk234.git --no-deps --no-build-isolation -vv
 
 if errorlevel 1 exit 1

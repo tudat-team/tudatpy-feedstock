@@ -27,34 +27,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.10</td>
-              <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.10" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.11</td>
-              <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.11" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.12</td>
-              <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.12" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.10</td>
-              <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.10" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64_python3.11</td>
               <td>
                 <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
@@ -69,31 +41,17 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_python3.10</td>
+              <td>osx_64_python3.13</td>
               <td>
                 <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.10" alt="variant">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.13" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_python3.11</td>
+              <td>osx_64_python3.14</td>
               <td>
                 <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.11" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_python3.12</td>
-              <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.12" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_python3.10</td>
-              <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.10" alt="variant">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.14" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -108,6 +66,20 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
                   <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.12" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.13</td>
+              <td>
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.13" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_python3.14</td>
+              <td>
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=win&configuration=win%20win_64_python3.14" alt="variant">
                 </a>
               </td>
             </tr>
@@ -187,7 +159,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `tudat-team` channel.
 Note that all branches in the tudat-team/tudatpy-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
