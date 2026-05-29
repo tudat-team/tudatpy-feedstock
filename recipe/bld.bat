@@ -26,6 +26,6 @@ if errorlevel 1 exit 1
 
 REM Go back to source root to install pytrk234
 echo Installing pytrk234...
-call %PYTHON% -m pip install git+https://github.com/NASA-PDS/PyTrk234.git --no-deps -vv
+call %PYTHON% -m pip install git+https://github.com/NASA-PDS/PyTrk234.git --no-deps --no-build-isolation -vv
 
 if errorlevel 1 exit 1
