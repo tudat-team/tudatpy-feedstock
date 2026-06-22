@@ -26,7 +26,6 @@ build:
     - {{ pin_compatible('sofa-cmake', max_pin='x.x') }}
     - {{ pin_compatible('boost-cpp', max_pin='x.x') }}
 
-
 requirements:
   build:
     # Compilers and build tools
