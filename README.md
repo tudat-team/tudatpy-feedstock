@@ -13,14 +13,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>GitHub Actions</td>
-    <td>
-      <a href="https://github.com/tudat-team/tudatpy-feedstock/actions/workflows/conda-build.yml">
-        <img src="https://github.com/tudat-team/tudatpy-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
@@ -34,17 +27,17 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>osx_64_python3.11.____cp311</td>
+              <td>osx_64_python3.11.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.11.____cp311" alt="variant">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.11.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_python3.12.____cp312</td>
+              <td>osx_64_python3.12.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.12.____cp312" alt="variant">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
