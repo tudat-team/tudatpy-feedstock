@@ -100,7 +100,12 @@ test:
     - tudatpy.estimation
     - tudatpy.dynamics.environment_setup
     - tudatpy.dynamics.propagation_setup
-    - tudatpy.estimation.estimation_setup
+    - tudatpy.dynamics.parameters_setup
+    - tudatpy.estimation.estimation_analysis
+    - tudatpy.estimation.observable_models_setup
+    - tudatpy.estimation.observations_setup
+    - tudatpy.estimation.observable_models
+    - tudatpy.estimation.observations
     - tudatpy.plotting
     - tudatpy.util
     - tudatpy.data
