@@ -96,11 +96,11 @@ test:
     - tudatpy.astro.gravitation
     - tudatpy.astro.two_body_dynamics
     - tudatpy.constants
-    - tudatpy.numerical_simulation
-    - tudatpy.numerical_simulation.environment_setup
-    - tudatpy.numerical_simulation.propagation_setup
-    - tudatpy.numerical_simulation.estimation_setup
-    - tudatpy.numerical_simulation.estimation
+    - tudatpy.dynamics
+    - tudatpy.estimation
+    - tudatpy.dynamics.environment_setup
+    - tudatpy.dynamics.propagation_setup
+    - tudatpy.estimation.estimation_setup
     - tudatpy.plotting
     - tudatpy.util
     - tudatpy.data
@@ -123,7 +123,6 @@ test:
     # - tests/test_perturbed_orbit.py
 
   commands:
-    - pip install astroquery==0.4.8.dev9321
     - python -c "from tudatpy.data import get_resource_path; print(get_resource_path())"
     - python -c "from tudatpy.data import save2txt"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
