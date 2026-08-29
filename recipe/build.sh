@@ -31,7 +31,7 @@ fi
 
 make install
 
-# delete build directory after installation to free up space
+echo "Deleting build directory after installation to free up disk space"
 cd ..
 rm -rf build
 
