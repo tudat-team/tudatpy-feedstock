@@ -18,6 +18,7 @@ cmake -G Ninja ^
     -DPython_EXECUTABLE=%PYTHON% ^
     -DPython_ROOT_DIR=%PREFIX% ^
     -DPython_FIND_REGISTRY=NEVER ^
+    -DTUDATPY_BUILD_WITH_DETAILED_PYBIND11_ERRORS=ON ^
     -DTUDAT_BUILD_TESTS=OFF ^
     ..
 if errorlevel 1 exit 1
