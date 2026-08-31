@@ -51,6 +51,7 @@ requirements:
     - cspice
     - nrlmsise-00
     - sofa-cmake
+    - cereal
     - python
     - pip
     - setuptools
