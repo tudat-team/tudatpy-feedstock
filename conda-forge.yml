@@ -6,6 +6,7 @@ provider:
   osx: azure
   linux_ppc64le: None
   linux_aarch64: None
+  win: azure
 
 build_platform:
   osx_arm64: osx_64
