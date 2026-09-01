@@ -1,7 +1,7 @@
 {% set name = "tudatpy" %}
   {% set version = "1.0.0.dev71" %}
   {% set build = "0" %}
-  {% set git_rev = "02a784839a18d49f4885b75315c333a098363573" %}  # Temporary pin for Azure CI validation
+  {% set git_rev = "02a784839a18d49f4885b75315c333a098363573" %}  # Temporary pin for Azure CI validation.
 
 package:
   name: {{ name }}
