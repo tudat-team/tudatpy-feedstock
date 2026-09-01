@@ -1,7 +1,7 @@
 {% set name = "tudatpy" %}
   {% set version = "1.0.0.dev71" %}
   {% set build = "0" %}
-  {% set git_rev = "v" + version %}
+  {% set git_rev = "1ced09522a515396f1588c72894c6be285f63060" %}  # Temporary pin until the next dev tag
 
 package:
   name: {{ name }}
