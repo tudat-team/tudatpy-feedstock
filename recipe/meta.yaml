@@ -113,6 +113,8 @@ test:
 
   requires:
     - pytest
+  files:
+    - run_feedstock_tests.py
   source_files:
     - tests/test_tudatpy/test_constants.py
     - tests/test_tudatpy/test_data_biases.py
@@ -132,16 +134,7 @@ test:
     - python -c "from tudatpy.data import get_resource_path; print(get_resource_path())"
     - python -c "from tudatpy.data import save2txt"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
-    - python -m pytest -v tests/test_tudatpy/test_constants.py
-    - python -m pytest -v tests/test_tudatpy/test_data.py
-    - python -m pytest -v tests/test_tudatpy/test_time_conversions.py
-    - python -m pytest -v tests/test_tudatpy/test_dependent_variable_dictionary.py
-    - python -m pytest -v tests/test_tudatpy/test_data_mpc.py
-    - python -m pytest -v tests/test_tudatpy/test_data_horizons.py
-    - python -m pytest -v tests/test_tudatpy/test_data_biases.py
-    - python -m pytest -v tests/test_tudatpy/test_data_weights.py
-    - python -m pytest -v tests/test_tudatpy/test_processTrk234.py
-    - python -m pytest -v tests/test_tudatpy/test_dse_functions.py
+    - python run_feedstock_tests.py
     # - python -m pytest -v tests/test_perturbed_orbit.py
     # - python -m pytest -v tests/test_imports.py
 about:
