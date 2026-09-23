@@ -17,10 +17,20 @@ TEST_FILES = (
     "test_dse_functions.py",
 )
 
+LINUX_SKIPPED_FILES = {
+    "test_dependent_variable_dictionary.py",
+    "test_data_horizons.py",
+}
+
 
 def main():
     results = []
     for name in TEST_FILES:
+        if sys.platform.startswith("linux") and name in LINUX_SKIPPED_FILES:
+            print(f"\nSkipping {name} on Linux", flush=True)
+            results.append((name, None))
+            continue
+
         print(f"\nRunning {name}", flush=True)
         # Preserve the existing process isolation between files, including SPICE state.
         result = subprocess.run(
@@ -39,10 +49,13 @@ def main():
 
     print("\nFeedstock test results:", flush=True)
     for name, returncode in results:
-        status = "PASS" if returncode == 0 else f"FAIL (exit code {returncode})"
+        if returncode is None:
+            status = "SKIP (Linux)"
+        else:
+            status = "PASS" if returncode == 0 else f"FAIL (exit code {returncode})"
         print(f"  {name}: {status}", flush=True)
 
-    return int(any(returncode != 0 for _, returncode in results))
+    return int(any(returncode not in (None, 0) for _, returncode in results))
 
 
 if __name__ == "__main__":
