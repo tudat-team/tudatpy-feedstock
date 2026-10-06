@@ -3,7 +3,6 @@ name: .github/workflows/autorerender.yml
 on:
   issue_comment:
     types: [created, edited, deleted]
-    branches: [main, develop]
 
 jobs:
  check-comments:
@@ -35,20 +34,22 @@ jobs:
        conda smithy rerender -c auto
        git push --all -f https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
    - uses: martialonline/workflow-status@v2
+     if: always()
      id: check
    - name: Check workflow failure
-     if: steps.check.outputs.status == 'failure'
+     if: always() && steps.check.outputs.status == 'failure'
      run: |
-       export MESSAGE="rerender workflow failed ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))..."
+       echo "MESSAGE=rerender workflow failed ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))..." >> "$GITHUB_ENV"
    - name: Check workflow cancelled
-     if: steps.check.outputs.status == 'cancelled'
+     if: always() && steps.check.outputs.status == 'cancelled'
      run: |
-       export MESSAGE="rerender workflow was cancelled! ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))"
+       echo "MESSAGE=rerender workflow was cancelled! ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))" >> "$GITHUB_ENV"
    - name: Check workflow success
      if: steps.check.outputs.status == 'success'
      run: |
-       export MESSAGE="rerender workflow was successful! :tada: ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))"
+       echo "MESSAGE=rerender workflow was successful! :tada: ([see log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}))" >> "$GITHUB_ENV"
    - uses: actions-ecosystem/action-create-comment@v1
+     if: always()
      with:
        github_token: ${{ secrets.github_token }}
        body: |
