@@ -108,6 +108,7 @@ jobs:
       export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
       export MINIFORGE_HOME=$(tools_install_dir)
       export OSX_FORCE_SDK_DOWNLOAD="1"
+      export UPLOAD_ON_BRANCH="develop"
       export flow_run_id=azure_$(Build.BuildNumber).$(System.JobAttempt)
       export remote_url=$(Build.Repository.Uri)
       export sha=$(Build.SourceVersion)

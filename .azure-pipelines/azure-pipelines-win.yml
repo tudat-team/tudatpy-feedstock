@@ -66,6 +66,7 @@ jobs:
         CONDA_BLD_PATH: $(build_workspace_dir)
         MINIFORGE_HOME: $(tools_install_dir)
         PYTHONUNBUFFERED: 1
+        UPLOAD_ON_BRANCH: develop
         UPLOAD_PACKAGES: $(UPLOAD_PACKAGES)
         UPLOAD_TEMP: $(UPLOAD_TEMP)
         build_platform: $(build_platform)
