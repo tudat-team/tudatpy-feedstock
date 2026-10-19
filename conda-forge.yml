@@ -21,3 +21,6 @@ azure:
   store_build_artifacts: True
 
 test: native_and_emulated
+
+# Release preparation changes this to master and rerenders before publishing PRs.
+upload_on_branch: develop
