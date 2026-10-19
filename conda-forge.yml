@@ -15,9 +15,12 @@ appveyor:
   secure:
     BINSTAR_TOKEN: vWktDJSW9Rh2frmNkzdUHF2n4WzalOoKudWGdBLo6jcC/suzU+fViO/3/TxLOnmW
 
-azure:
+workflow_settings:
   # toggle for storing the conda build_artifacts directory (including the
   # built packages) as an Azure pipeline artifact that can be downloaded
   store_build_artifacts: True
+  # remove unused preinstalled tooling from the Linux runner; the build
+  # otherwise runs out of disk space while creating the test environment
+  free_disk_space: max
 
 test: native_and_emulated
