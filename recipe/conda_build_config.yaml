@@ -11,13 +11,7 @@ python:
   - 3.14.* *_cp314
 python_impl:
   - cpython
-  - cpython
-  - cpython
-  - cpython
 numpy:
-  - 2.4.*
-  - 2.4.*
-  - 2.4.*
   - 2.4.*
 is_python_min:
   - 3.11
