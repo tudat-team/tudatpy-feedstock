@@ -43,6 +43,9 @@ if not "%ARTIFACT_UNIQUE_ID%" == "%ARTIFACT_UNIQUE_ID:~0,80%" (
     set ARTIFACT_UNIQUE_ID=%CI_RUN_ID%_%CONFIG_SHORT%
 )
 
+rem Set a descriptive ID for the archive(s), specialized for this particular job run
+set ARCHIVE_UNIQUE_ID=%CI_RUN_ID%_%CONFIG%
+
 rem --use-compress-prog hangs on Azure, but we can use bsdtar unconditionally.
 set "ZSTD=--zstd --options=zstd:compression-level=12,zstd:threads=0"
 
