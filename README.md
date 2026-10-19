@@ -1,7 +1,7 @@
 About tudatpy-feedstock
 =======================
 
-Feedstock license: [BSD-3-Clause](https://github.com/tudat-team/tudatpy-feedstock/blob/main/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/tudat-team/fs-feedstock/blob/main/LICENSE.txt)
 
 Home: https://tudat-space.readthedocs.io/
 
@@ -20,8 +20,8 @@ Current build status
     <td>
       <details>
         <summary>
-          <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-            <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main">
+          <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+            <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/fs-feedstock?branchName=main">
           </a>
         </summary>
         <table>
@@ -29,29 +29,29 @@ Current build status
           <tbody><tr>
               <td>osx_64_python3.11.____cpython</td>
               <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.11.____cpython" alt="variant">
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/fs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.11.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_64_python3.12.____cpython</td>
               <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.12.____cpython" alt="variant">
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/fs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.12.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_64_python3.13.____cp313</td>
               <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.13.____cp313" alt="variant">
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/fs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.13.____cp313" alt="variant">
                 </a>
               </td>
             </tr><tr>
               <td>osx_64_python3.14.____cp314</td>
               <td>
-                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=3&branchName=main">
-                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/tudatpy-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.14.____cp314" alt="variant">
+                <a href="https://dev.azure.com/tudat-team/feedstock-builds/_build/latest?definitionId=None&branchName=main">
+                  <img src="https://dev.azure.com/tudat-team/feedstock-builds/_apis/build/status/fs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.14.____cp314" alt="variant">
                 </a>
               </td>
             </tr>
