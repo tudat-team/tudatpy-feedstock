@@ -31,6 +31,7 @@ requirements:
     # Compilers and build tools
     - {{ compiler('cxx') }}    # [not win]
     - {{ compiler('c') }}      # [not win]
+    - {{ stdlib('c') }}        # [not win]
     - {{ compiler('clang') }}  # [win]
     - cmake
     - make  # [unix]

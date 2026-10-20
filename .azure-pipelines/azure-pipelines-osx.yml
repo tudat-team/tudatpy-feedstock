@@ -13,7 +13,7 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
-        free_disk_space: skip
+        free_disk_space: max
         pagefile_size: 0
         resize_partitions: false
         store_build_artifacts: true
@@ -24,7 +24,7 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
-        free_disk_space: skip
+        free_disk_space: max
         pagefile_size: 0
         resize_partitions: false
         store_build_artifacts: true
@@ -35,7 +35,7 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
-        free_disk_space: skip
+        free_disk_space: max
         pagefile_size: 0
         resize_partitions: false
         store_build_artifacts: true
@@ -46,7 +46,7 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
-        free_disk_space: skip
+        free_disk_space: max
         pagefile_size: 0
         resize_partitions: false
         store_build_artifacts: true
@@ -57,7 +57,7 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
-        free_disk_space: skip
+        free_disk_space: max
         pagefile_size: 0
         resize_partitions: false
         store_build_artifacts: true
@@ -68,7 +68,7 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
-        free_disk_space: skip
+        free_disk_space: max
         pagefile_size: 0
         resize_partitions: false
         store_build_artifacts: true
@@ -79,7 +79,7 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
-        free_disk_space: skip
+        free_disk_space: max
         pagefile_size: 0
         resize_partitions: false
         store_build_artifacts: true
@@ -90,7 +90,7 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
-        free_disk_space: skip
+        free_disk_space: max
         pagefile_size: 0
         resize_partitions: false
         store_build_artifacts: true
@@ -101,6 +101,11 @@ jobs:
 
   steps:
   # TODO: Fast finish on azure pipelines?
+  - script: |
+      .scripts/free_disk_space.sh "$(free_disk_space)"
+    env:
+      OS: macos
+    displayName: Manage disk space
   - script: |
       export CI=azure
       export CONDA_BLD_PATH=$(build_workspace_dir)
@@ -125,15 +130,18 @@ jobs:
   - script: |
       export ARTIFACT_STAGING_DIR="$(Build.ArtifactStagingDirectory)"
       # Archive everything in CONDA_BLD_PATH except environments
-      export BLD_ARTIFACT_PREFIX=conda_artifacts
+      export BLD_ARTIFACT_PREFIX=conda_pkgs
       export CI=azure
       export CI_RUN_ID=$(build.BuildNumber).$(system.JobAttempt)
       export CONDA_BLD_PATH=$(build_workspace_dir)
       export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
       export MINIFORGE_HOME=$(tools_install_dir)
       if [[ "$AGENT_JOBSTATUS" == "Failed" ]]; then
+        # Use a distinct prefix on failure (to match GHA).
+        export BLD_ARTIFACT_PREFIX=conda_pkgs_failed
         # Archive the CONDA_BLD_PATH environments only when the job fails
         export ENV_ARTIFACT_PREFIX=conda_envs
+        export WRK_ARTIFACT_PREFIX=conda_work
       fi
       ./.scripts/create_conda_build_artifacts.sh
     displayName: Prepare conda build artifacts
@@ -145,6 +153,13 @@ jobs:
     inputs:
       targetPath: $(BLD_ARTIFACT_PATH)
       artifactName: $(BLD_ARTIFACT_NAME)
+
+  - task: PublishPipelineArtifact@1
+    displayName: Store conda work directoryartifacts
+    condition: not(eq(variables.WRK_ARTIFACT_PATH, ''))
+    inputs:
+      targetPath: $(WRK_ARTIFACT_PATH)
+      artifactName: $(WRK_ARTIFACT_NAME)
 
   - task: PublishPipelineArtifact@1
     displayName: Store conda build environment artifacts
