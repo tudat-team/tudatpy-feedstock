@@ -72,10 +72,10 @@ Current release info
 Installing tudatpy
 ==================
 
-Installing `tudatpy` from the `tudat-team` channel can be achieved by adding `tudat-team` to your channels with:
+Installing `tudatpy` from the `tudat-team/label/dev` channel can be achieved by adding `tudat-team/label/dev` to your channels with:
 
 ```
-conda config --add channels tudat-team
+conda config --add channels tudat-team/label/dev
 conda config --set channel_priority strict
 ```
 
@@ -121,7 +121,7 @@ It is possible to list all of the versions of `tudatpy` available on your platfo
 <summary>With conda</summary>
 
 ```
-conda search tudatpy --channel tudat-team
+conda search tudatpy --channel tudat-team/label/dev
 ```
 
 </details>
@@ -130,7 +130,7 @@ conda search tudatpy --channel tudat-team
 <summary>With mamba</summary>
 
 ```
-mamba search tudatpy --channel tudat-team
+mamba search tudatpy --channel tudat-team/label/dev
 ```
 
 </details>
@@ -139,7 +139,7 @@ mamba search tudatpy --channel tudat-team
 <summary>With pixi</summary>
 
 ```
-pixi search tudatpy --channel tudat-team
+pixi search tudatpy --channel tudat-team/label/dev
 ```
 
 </details>
@@ -149,13 +149,13 @@ pixi search tudatpy --channel tudat-team
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search tudatpy --channel tudat-team
+mamba repoquery search tudatpy --channel tudat-team/label/dev
 
 # List packages depending on `tudatpy`:
-mamba repoquery whoneeds tudatpy --channel tudat-team
+mamba repoquery whoneeds tudatpy --channel tudat-team/label/dev
 
 # List dependencies of `tudatpy`:
-mamba repoquery depends tudatpy --channel tudat-team
+mamba repoquery depends tudatpy --channel tudat-team/label/dev
 ```
 
 </details>

@@ -125,7 +125,7 @@ if /i "%CI%" == "azure" (
     )
     set "TEMP=%UPLOAD_TEMP%"
 )
-set "UPLOAD_ON_BRANCH=master"
+set "UPLOAD_ON_BRANCH=develop"
 :: Note, this needs GIT_BRANCH too
 
 if /i "%UPLOAD_PACKAGES%" == "true" (
