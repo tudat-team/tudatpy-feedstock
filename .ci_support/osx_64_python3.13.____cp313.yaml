@@ -1,5 +1,3 @@
-MACOSX_DEPLOYMENT_TARGET:
-- '11.0'
 MACOSX_SDK_VERSION:
 - '11.0'
 boost_cpp:
@@ -13,9 +11,9 @@ c_stdlib:
 c_stdlib_version:
 - '11.0'
 channel_sources:
-- tudat-team/label/dev, tudat-team, conda-forge, defaults
+- tudat-team, conda-forge, defaults
 channel_targets:
-- tudat-team dev
+- tudat-team main
 cxx_compiler:
 - clangxx
 cxx_compiler_version:

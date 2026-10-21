@@ -9,9 +9,9 @@ c_stdlib:
 c_stdlib_version:
 - '2.17'
 channel_sources:
-- tudat-team/label/dev, tudat-team, conda-forge, defaults
+- tudat-team, conda-forge, defaults
 channel_targets:
-- tudat-team dev
+- tudat-team main
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
