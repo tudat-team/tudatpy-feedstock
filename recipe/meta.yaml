@@ -1,6 +1,6 @@
 {% set name = "tudatpy" %}
-  {% set version = "1.0.0" %}
-  {% set build = "3" %}
+  {% set version = "1.1.0" %}
+  {% set build = "0" %}
   {% set git_rev = "v" + version %}
 
 package:
@@ -26,12 +26,12 @@ build:
     - {{ pin_compatible('sofa-cmake', max_pin='x.x') }}
     - {{ pin_compatible('boost-cpp', max_pin='x.x') }}
 
-
 requirements:
   build:
     # Compilers and build tools
     - {{ compiler('cxx') }}    # [not win]
     - {{ compiler('c') }}      # [not win]
+    - {{ stdlib('c') }}        # [not win]
     - {{ compiler('clang') }}  # [win]
     - cmake
     - make  # [unix]
@@ -52,8 +52,12 @@ requirements:
     - cspice
     - nrlmsise-00
     - sofa-cmake
+    - cereal
     - python
     - pip
+    - setuptools
+    - setuptools-scm
+    - wheel
     - eigen
     - pybind11
     - boost-cpp {{ boost_cpp }}
@@ -94,17 +98,24 @@ test:
     - tudatpy.astro.gravitation
     - tudatpy.astro.two_body_dynamics
     - tudatpy.constants
-    - tudatpy.numerical_simulation
-    - tudatpy.numerical_simulation.environment_setup
-    - tudatpy.numerical_simulation.propagation_setup
-    - tudatpy.numerical_simulation.estimation_setup
-    - tudatpy.numerical_simulation.estimation
+    - tudatpy.dynamics
+    - tudatpy.estimation
+    - tudatpy.dynamics.environment_setup
+    - tudatpy.dynamics.propagation_setup
+    - tudatpy.dynamics.parameters_setup
+    - tudatpy.estimation.estimation_analysis
+    - tudatpy.estimation.observable_models_setup
+    - tudatpy.estimation.observations_setup
+    - tudatpy.estimation.observable_models
+    - tudatpy.estimation.observations
     - tudatpy.plotting
     - tudatpy.util
     - tudatpy.data
 
   requires:
     - pytest
+  files:
+    - run_feedstock_tests.py
   source_files:
     - tests/test_tudatpy/test_constants.py
     - tests/test_tudatpy/test_data_biases.py
@@ -114,27 +125,17 @@ test:
     - tests/test_tudatpy/test_processTrk234.py
     - tests/test_tudatpy/test_data.py
     - tests/test_tudatpy/test_dependent_variable_dictionary.py
-    #- tests/test_tudatpy/test_dse_functions.py
+    - tests/test_tudatpy/test_dse_functions.py
     - tests/test_tudatpy/test_interface_spice.py
     - tests/test_tudatpy/test_time_conversions.py
    # - tests/test_imports.py
     # - tests/test_perturbed_orbit.py
 
   commands:
-    - pip install astroquery==0.4.8.dev9321
     - python -c "from tudatpy.data import get_resource_path; print(get_resource_path())"
     - python -c "from tudatpy.data import save2txt"
     #- python -c "from tudatpy.apps.satellite_propagator import single; single()"
-    - python -m pytest -v tests/test_tudatpy/test_constants.py
-    - python -m pytest -v tests/test_tudatpy/test_data.py
-    - python -m pytest -v tests/test_tudatpy/test_time_conversions.py
-    - python -m pytest -v tests/test_tudatpy/test_dependent_variable_dictionary.py
-    - python -m pytest -v tests/test_tudatpy/test_data_mpc.py
-    - python -m pytest -v tests/test_tudatpy/test_data_horizons.py
-    - python -m pytest -v tests/test_tudatpy/test_data_biases.py
-    - python -m pytest -v tests/test_tudatpy/test_data_weights.py
-    - python -m pytest -v tests/test_tudatpy/test_processTrk234.py
-    #- python -m pytest -v tests/test_tudatpy/test_dse_functions.py
+    - python run_feedstock_tests.py
     # - python -m pytest -v tests/test_perturbed_orbit.py
     # - python -m pytest -v tests/test_imports.py
 about:

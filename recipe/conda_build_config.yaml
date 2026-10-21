@@ -1,25 +1,23 @@
 channel_targets:
   - tudat-team main
 channel_sources:
-  - tudat-team, tudat-team, conda-forge, defaults
+  - tudat-team, conda-forge, defaults
 boost_cpp:
   - 1.84.0
 python:
-  - 3.10
-  - 3.11
-  - 3.12
+  - 3.11.* *_cpython
+  - 3.12.* *_cpython
+  - 3.13.* *_cp313
+  - 3.14.* *_cp314
 python_impl:
   - cpython
-  - cpython
-  - cpython
 numpy:
-  - 1.26.*
-  - 1.26.*
-  - 1.26.*
+  - 2.4.*
 is_python_min:
-  - 3.10
   - 3.11
   - 3.12
+  - 3.13
+  - 3.14
 c_compiler:
   - clang
 c_compiler_version:

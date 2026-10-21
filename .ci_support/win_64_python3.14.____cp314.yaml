@@ -1,0 +1,20 @@
+boost_cpp:
+- 1.84.0
+channel_sources:
+- tudat-team, conda-forge, defaults
+channel_targets:
+- tudat-team main
+clang_compiler:
+- clang-cl
+clang_compiler_version:
+- '21'
+numpy:
+- 2.4.*
+pin_run_as_build:
+  python:
+    min_pin: x.x
+    max_pin: x.x
+python:
+- 3.14.* *_cp314
+target_platform:
+- win-64
