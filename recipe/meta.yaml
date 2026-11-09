@@ -77,6 +77,8 @@ requirements:
     - astropy-healpix
     - colorama
     - tqdm
+    - bitstring # Dependencies of atdf2ascii (pip-installed in build.sh/bld.bat without deps)
+    - termcolor # Dependencies of atdf2ascii (pip-installed in build.sh/bld.bat without deps)
     - nrlmsise-00
     - cspice
     - sofa-cmake
@@ -111,7 +113,6 @@ test:
     - tudatpy.plotting
     - tudatpy.util
     - tudatpy.data
-
   requires:
     - pytest
   source_files:

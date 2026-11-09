@@ -39,5 +39,5 @@ rm -rf build
 echo "Installing pytrk234..."
 $PYTHON -m pip install git+https://github.com/NASA-PDS/PyTrk234.git --no-deps --no-build-isolation -vv
 echo "Installing atdf2ascii..."
-$PYTHON -m pip install git+https://github.com/ashokverma24/atdf2ascii.git --no-build-isolation -vv
+$PYTHON -m pip install git+https://github.com/ashokverma24/atdf2ascii.git --no-deps --no-build-isolation -vv
 
