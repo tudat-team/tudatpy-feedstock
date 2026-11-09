@@ -92,14 +92,15 @@ test:
     - tudatpy.math.interpolators
     - tudatpy.math.numerical_integrators
     - tudatpy.math.root_finders
-    - tudatpy.interface
-    - tudatpy.interface.spice
     - tudatpy.astro
     - tudatpy.astro.frame_conversion
     - tudatpy.astro.element_conversion
     - tudatpy.astro.gravitation
     - tudatpy.astro.two_body_dynamics
     - tudatpy.constants
+    - tudatpy.data_input
+    - tudatpy.data_input.tracking_data
+    - tudatpy.data_input.environment_data.spice
     - tudatpy.dynamics
     - tudatpy.estimation
     - tudatpy.dynamics.environment_setup
@@ -112,7 +113,6 @@ test:
     - tudatpy.estimation.observations
     - tudatpy.plotting
     - tudatpy.util
-    - tudatpy.data
   requires:
     - pytest
   source_files:
@@ -121,8 +121,6 @@ test:
     - version
 
   commands:
-    - python -c "from tudatpy.data import get_resource_path; print(get_resource_path())"
-    - python -c "from tudatpy.data import save2txt"
     # Same as the tudatpy CI (`pytest`), restricted to the Python tests
     - pytest -v -ra --continue-on-collection-errors tests/test_tudatpy --ignore=tests/test_tudatpy/test_api_docs.py --ignore=tests/test_tudatpy/test_resource_catalog.py --no-remote-data
 
