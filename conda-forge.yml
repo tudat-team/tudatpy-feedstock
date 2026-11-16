@@ -27,3 +27,7 @@ test: native_and_emulated
 
 # Release preparation changes this to master and rerenders before publishing PRs.
 upload_on_branch: develop
+
+# Do not copy the test source files (listed in recipe/meta.yaml) to the package
+conda_build:
+  copy_test_source_files: false

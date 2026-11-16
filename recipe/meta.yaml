@@ -117,6 +117,7 @@ test:
     - pytest
   source_files:
     - tests/test_tudatpy
+    - tests/test_tudat/data/
     # Read by test_version.py to check the installed version.
     - version
 
